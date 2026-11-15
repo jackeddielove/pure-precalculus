@@ -1,0 +1,10 @@
+
+<answer selectMultiple>
+  <label>Determine which of the following are linear equations.</label>
+  <choice><m>2x+3y^2=6</m></choice>
+  <choice credit="1"><m>5x-3y+z=0</m></choice>
+  <choice><m>\sqrt{u}=15</m></choice>
+  <choice credit="1"><m>\sqrt{2}u=6v-10w</m></choice>
+  <choice><m>x+xy+y=2</m></choice>
+  <choice credit="1"><m>4x_1=2\pi x_2-x_3=3x_4</m></choice>
+</answer>

@@ -1,0 +1,21 @@
+<activity name="doenet-onboarding-assignment">
+  <title>Onboarding</title>
+
+  <p>Welcome to our Doenet course page! To confirm that your account is successfully logged in and that you can access our materials, please complete the task below.</p>
+
+  <p>
+    Type the word <alert>ready</alert> in the box below and click the submit button to log your completion.
+  </p>
+
+  <p>
+    <answer name="ans" type="text">
+      <award>ready</award>
+    </answer>
+  </p>
+
+  <conditionalContent condition="$ans.creditAchieved = 1">
+    <p>
+      <alert>Awesome! Your completion has been successfully sent to the gradebook. You can close this tab.</alert>
+    </p>
+  </conditionalContent>
+</activity>
