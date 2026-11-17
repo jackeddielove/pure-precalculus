@@ -1,6 +1,6 @@
 
 <answer selectMultiple>
-  <label>Determine which of the following are linear equations.</label>
+  <label>Select all of the linear equations.</label>
   <choice><m>2x+3y^2=6</m></choice>
   <choice credit="1"><m>5x-3y+z=0</m></choice>
   <choice><m>\sqrt{u}=15</m></choice>
