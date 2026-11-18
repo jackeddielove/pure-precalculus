@@ -11,12 +11,26 @@
 \usepackage{hyperref} % Load this last in your preamble
 \hypersetup{
     colorlinks=true,
-    urlcolor=blue!70!black
+    urlcolor=blue!70!black,
+    linkcolor=purple!70!black
 }
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Example}
+\surroundwithmdframed[
+    hidealllines=true,
+    leftline=true,
+    linewidth=1.5pt,
+    linecolor=gray!50,
+    innerleftmargin=10pt,
+    innerrightmargin=0pt,
+    innertopmargin=2pt,
+    innerbottommargin=2pt,
+    skipabove=10pt,
+    skipbelow=10pt
+]{example}
 \newcommand{\doenetlink}[2]{%
     \begin{tcolorbox}[
         colback=gray!6,
@@ -31,8 +45,18 @@
     {\small\ttfamily \url{#2}}
     \end{tcolorbox}%
 }
+\newmdenv[
+    backgroundcolor=gray!15,
+    linecolor=black,
+    linewidth=1pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    userdefinedwidth=0.8\textwidth,
+    align=center,
+    nobreak=true
+]{calloutbox}
 
-\title{Systems of Equations}
+\title{Systems of Equations 1}
 \author{}
 \date{}
 
@@ -42,9 +66,11 @@
 
 % As you read through these notes, write down any questions you have. Posing clear questions is part of the practice of mathematics. If you have a question, it is likely that someone else has the same question. You can email me the questions or ask them at the beginning of class.
 
-\section{Introduction}
+\section{Introduction to Linear Equations}\label{sec:introduction}
 
-We begin with a definition. Read it slowly a few times and try to understand what all of the symbols mean. Then, look at Example \ref{ex:linear-eqn-3var} and Example \ref{ex:linear-eqn-pt-slope} and make sure you see why each one fits the definition. Finally, look at Example \ref{ex:linear-eqn-non} and make sure you understand why those equations do not fit the definition.
+We begin with a definition.
+
+% Read it slowly a few times and try to understand what all of the symbols mean. Then, look at Example \ref{ex:linear-eqn-3var} and Example \ref{ex:linear-eqn-pt-slope} and make sure you see why each one fits the definition. Finally, look at Example \ref{ex:linear-eqn-non} and make sure you understand why those equations do not fit the definition.
 
 \begin{definition} \label{def:linear-eqn}
 A \textbf{linear equation in} $n$ \textbf{variables} is an equation that can be written in the form
@@ -61,7 +87,7 @@ where $a_1, \ldots a_n, b$ are real numbers and \(n\) is a positive integer. The
 \begin{example}\label{ex:linear-eqn-3var}
 The equation
 \[3x+5y-6z=10\]
-is a linear equation in three variables. Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=3\), \(a_2=5\), \(a_3=-6\), \(b=10\), \(x_1=x\), \(x_2=y\), and \(x_3=z\). Since substituting \(2\) for \(x\), \(2\) for \(y\), and \(1\) for \(z\) makes the equation a true statement (observe: \(3(2)+5(2)-6(1)=10\)), the list \((2, 2, 1)\) is a solution to the equation. There are infinitely many others.
+is a linear equation in three variables. Using the notation in \cref{def:linear-eqn}, we have \(a_1=3\), \(a_2=5\), \(a_3=-6\), \(b=10\), \(x_1=x\), \(x_2=y\), and \(x_3=z\). Since substituting \(2\) for \(x\), \(2\) for \(y\), and \(1\) for \(z\) makes the equation a true statement (observe: \(3(2)+5(2)-6(1)=10\)), the list \((2, 2, 1)\) is a solution to the equation. There are infinitely many others.
 \end{example}
 
 % \begin{example}
@@ -71,7 +97,7 @@ is a linear equation in three variables. Using the notation in Definition \ref{d
 % \end{example}
 
 \begin{example}\label{ex:linear-eqn-pt-slope}
-The point-slope form of a line, \(y=y_0+m(x-x_0)\) is a linear equation in two variables. Take, for example, \(y=3+2(x-6)\). Using algebra, we can rewrite the equation in the form of Definition \ref{def:linear-eqn}:
+The point-slope form of a line, \(y=y_0+m(x-x_0)\) is a linear equation in two variables. Take, for example, \(y=3+2(x-6)\). Using algebra, we can rewrite the equation in the form of \cref{def:linear-eqn}:
 \begin{align*}
     y=3+2(x-6) &\Longrightarrow y=3+2x-12 \\
     &\Longrightarrow y=2x-9 \\
@@ -81,17 +107,17 @@ Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=-2\), \(a_2
 \end{example}
 
 \begin{example}\label{ex:linear-eqn-non}
-The equations \(x^2+x+1=0\), \(4x-xy=2\), \(5\sqrt{x}=2\), and \(3x+\frac{1}{y}=y\) are \textit{not} linear equations. The terms \(x^2\), \(xy\), \(\sqrt{x}\), and \(\frac{1}{y}\) prohibit them from being rewritten in the form in Definition \ref{def:linear-eqn}.
+The equations \(x^2+x+1=0\), \(4x-xy=2\), \(5\sqrt{x}=2\), and \(3x+\frac{1}{y}=y\) are \textit{not} linear equations. The terms \(x^2\), \(xy\), \(\sqrt{x}\), and \(\frac{1}{y}\) prohibit them from being rewritten in the form in \cref{def:linear-eqn}.
 \end{example}
 
-\subsection{Preview Activity}
+\subsection{Preview Activity}\label{subsec:preview}
 
 Click the link or URL below to access the Preview Activity for this section. You must be logged in to Doenet for your score to be recorded. If you click the link and are taken to a page that says \textbf{Taking assignment as an anonymous user}, you are \textit{not} logged in. If that happens, click the circle with the question mark and select \textbf{Sign in to save work}. After completing the sign-in process, return here and click the link again.
 
 \doenetlink{Systems of Equations 1 Preview Activity}{https://doenet.org/code/737878}
 
 
-\section{Systems of Linear Equations}
+\section{Introduction to Systems of Linear Equations}\label{sec:systems}
 
 \begin{definition}
 A \textbf{system of linear equations} is a collection of one or more linear equations involving the same variables:
@@ -100,19 +126,16 @@ A \textbf{system of linear equations} is a collection of one or more linear equa
     &\vdots \\
     a_{k1}x_1+\cdots+a_{kn}x_n&=b_k.
 \end{align*}
-A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers that is a solution to each of the equations in the system.
+A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers that is a solution to each of the equations in the system. The \textbf{solution set} of a system of linear equations is the set of all solutions to the system.
 \end{definition}
 
-\begin{example}
+\begin{example}\label{ex:linear-system-1}
     Consider the system of linear equations
-    \begin{align}
-    \begin{split}
+    \begin{align*}
         -x+y&=-1 \\
-        \frac{1}{2}x+y&=2.
-    \end{split}
-    \label{eqn:linear-system-1}
-    \end{align}
-    Figure \ref{fig:linear-system-1} shows the graphs of the linear equations (\ref{eqn:linear-system-1}). Each line represents the set of solutions to the corresponding linear equation. The lines share a single point, \((2, 1)\), which is the only solution to the system.
+        \frac{1}{2}x+y&=2
+    \end{align*}
+    and their graphs shown in \cref{fig:linear-system-1}. Each line represents the set of solutions to the corresponding linear equation. The lines share a single point, \((2, 1)\), which is the only solution to the system.
 
 \begin{figure}[H]
     \centering
@@ -154,28 +177,17 @@ A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers th
 
 The system of equations in the previous example had a single solution, but this is not always the case. In fact, we have the following fact about systems of linear equations:
 
-\begin{mdframed}[
-    backgroundcolor=gray!15,
-    linecolor=black,       % The dark border color
-    linewidth=1pt,         % Border thickness
-    innertopmargin=10pt,   % Margin inside the box at the top
-    innerbottommargin=10pt,% Margin inside the box at the bottom
-    userdefinedwidth=0.8\textwidth,
-    align=center           % Centers the box on the page
-]
-A system of linear equations has either 1 solution, no solutions, or infinitely many solutions.
-\end{mdframed}
+\begin{calloutbox}
+\textbf{Solution Sets of Linear Systems}: A system of linear equations has either 1 solution, no solutions, or infinitely many solutions.
+\end{calloutbox}
 
 \begin{example}
     Consider the system of linear equations
-    \begin{align}
-    \begin{split}
+    \begin{align*}
         x+z&=2 \\
         x+y-z&=0.
-    \end{split}
-    \label{eqn:linear-system-2}
-    \end{align}    
-    The solution set to each of the equations in (\ref{eqn:linear-system-2}) can be represented as a 2-dimensional plane in 3-dimensional space. The two planes intersect at a line, which represents the solution set of the system. See Figure \ref{fig:linear-system-2}.
+    \end{align*}
+    The solution set to each of these equations can be represented as a 2-dimensional plane in 3-dimensional space. The two planes intersect at a line, which represents the solution set of the system. See \cref{fig:linear-system-2}.
 
 \begin{figure}[H]
     \centering
@@ -225,14 +237,11 @@ A system of linear equations has either 1 solution, no solutions, or infinitely 
 
 \begin{example}
     Consider the system of linear equations
-    \begin{align}
-    \begin{split}
+    \begin{align*}
         -x+y&=-1 \\
-        -x+y&=2.
-    \end{split}
-    \label{eqn:linear-system-2}
-    \end{align}
-    Figure \ref{fig:linear-system-2} shows the graphs of the linear equations (\ref{eqn:linear-system-2}). The system has no solution; equivalently, the lines do not intersect.
+        -x+y&=2
+    \end{align*}
+    and their graphs shown in \cref{fig:linear-system-2}. The system has no solution; equivalently, the lines do not intersect.
 
 \begin{figure}[H]
     \centering
@@ -272,5 +281,120 @@ A system of linear equations has either 1 solution, no solutions, or infinitely 
 \end{figure}
 \end{example}
 
+\section{Solving Systems of Equations}\label{sec:solving-systems}
+
+In this section, we introduce two methods for solving systems of linear equations: the substitution method and the elimination method. These methods work well for small systems; for larger systems we will need techniques that will be introduced in \cref{sec:matrices-systems}.
+
+\subsection*{The substitution method}\label{subsec:substitution-method}
+
+In the substitution method, we solve one of the equations for one variable in terms of the others, then substitute that expression into the other equations. This reduces the number of variables by one. We repeat this process until we have a single equation in one variable, which we can solve. Then we back-substitute to find the other variables.
+
+\begin{example}\label{ex:substitution-method-1}
+Recall the following system of linear equations from \cref{ex:linear-system-1}:
+\begin{align*}
+    -x+y&=-1 \\
+    \frac{1}{2}x+y&=2.
+\end{align*}
+To find a solution \((s_1, s_2)\) to this system, we can start by solving the first equation for \(y\) in terms of \(x\):
+\begin{align*}
+    -x+y&=-1 \\
+    y&=x-1.
+\end{align*}
+We can then substitute \(x-1\) for \(y\) in the second equation:
+\begin{align*}
+    \frac{1}{2}x+y&=2 \\
+    \frac{1}{2}x+(x-1)&=2 \\
+    \frac{3}{2}x-1&=2 \\
+    \frac{3}{2}x&=3 \\
+    x&=2.
+\end{align*}
+Now that we know \(x=2\), we can substitute \(2\) for \(x\) in the equation \(y=x-1\) to find \(y\):
+\begin{align*}
+    y&=x-1 \\
+    y&=2-1 \\
+    y&=1.
+\end{align*}
+Thus, \((2, 1)\) is a solution to the system of equations. In fact, it is the only solution.
+\end{example}
+
+
+In the next example, we apply this method to a system of three equations in three variables.
+
+\begin{example}\label{ex:substitution-method-2}
+Consider the following system:
+\begin{align*}
+    x+y+z&=6 \\
+    2x-y+3z&=14 \\
+    -x+4y-2z&=-2.
+\end{align*}
+We can start by solving the first equation for \(z\) in terms of \(x\) and \(y\):
+\begin{align*}
+    x+y+z&=6 \\
+    z&=6-x-y.
+\end{align*}
+Next, we can substitute \(6-x-y\) for \(z\) in the second equation and use algebra to simplify, producing an equation in \(x\) and \(y\) only:
+\begin{align*}
+    2x-y+3(6-x-y)&=14 \\
+    2x-y+18-3x-3y&=14 \\
+    -x-4y+18&=14 \\
+    -x-4y&=-4 \\
+    x+4y&=4.
+\end{align*}
+Doing the same for the third equation, we get:
+\begin{align*}
+    -x+4y-2(6-x-y)&=-2 \\
+    -x+4y-12+2x+2y&=-2 \\
+    x+6y-12&=-2 \\
+    x+6y&=10.
+\end{align*}
+Now we have a system of two equations in two variables:
+\begin{align*}
+    x+4y&=4 \\
+    x+6y&=10
+\end{align*}
+which we can solve using the substitution method again. Solving the first equation for \(x\) in terms of \(y\), we get:
+\begin{align*}
+    x&=4-4y.
+\end{align*}
+Substituting \(4-4y\) for \(x\) in the second equation, we get:
+\begin{align*}
+    (4-4y)+6y&=10 \\
+    4+2y&=10 \\
+    2y&=6 \\
+    y&=3.
+\end{align*}
+Now that we know \(y=3\), we can substitute \(3\) for \(y\) in the equation \(x=4-4y\) to find \(x\):
+\begin{align*}
+    x&=4-4y \\
+    x&=4-4(3) \\
+    x&=4-12 \\
+    x&=-8.
+\end{align*}
+Finally, we can substitute \(x=-8\) and \(y=3\) into the equation \(z=6-x-y\) to find \(z\):
+\begin{align*}
+    z&=6-x-y \\
+    z&=6-(-8)-3 \\
+    z&=6+8-3 \\
+    z&=11.
+\end{align*}
+Thus, \((-8, 3, 11)\) is a solution to the system of equations. In fact, it is the only solution.
+\end{example}
+
+In \cref{ex:substitution-method-1,ex:substitution-method-2}, each system of equations had a single solution. During the in-class activity, you will see that the substitution method can also be used to find infinitely many solutions or to determine that a system has no solutions. For now, we summarize the steps of the substitution method:
+\begin{calloutbox}
+    \textbf{The Substitution Method} To solve a system of linear equations using the substitution method, follow these steps:
+    \begin{enumerate}
+        \item Solve one of the equations for one variable in terms of the others.
+        \item Substitute the expression from step 1 into the other equations, reducing the number of variables by one.
+        \item Repeat steps 1 and 2 until you have a single equation in one variable.
+        \item Solve for that variable, then back-substitute to find the other variables.
+    \end{enumerate}
+\end{calloutbox}
+
+\subsection*{The elimination method}\label{subsec:elimination-method}
+
+
+
+\section{Matrices and Systems of Equations}\label{sec:matrices-systems}
 
 \end{document}
