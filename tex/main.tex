@@ -1,13 +1,36 @@
 \documentclass{article}
+
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Ensures backward compatibility
 \usepackage{mdframed}
 \usepackage{float}
-\pgfplotsset{compat=1.18} % Ensures backward compatibility
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref} % Load this last in your preamble
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!70!black
+}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Example}
+\newcommand{\doenetlink}[2]{%
+    \begin{tcolorbox}[
+        colback=gray!6,
+        colframe=blue!60!black,
+        boxrule=0pt,
+        leftrule=3pt,
+        arc=2pt,
+        left=8pt, right=8pt, top=6pt, bottom=6pt,
+        before skip=10pt, after skip=10pt
+    ]
+    \textbf{\href{#2}{#1}} \\
+    {\small\ttfamily \url{#2}}
+    \end{tcolorbox}%
+}
 
 \title{Systems of Equations}
 \author{}
@@ -17,9 +40,11 @@
 
 \maketitle
 
+% As you read through these notes, write down any questions you have. Posing clear questions is part of the practice of mathematics. If you have a question, it is likely that someone else has the same question. You can email me the questions or ask them at the beginning of class.
+
 \section{Introduction}
 
-We begin with a definition. Read it slowly a few times and try to understand what all of the symbols mean. Then look at the examples and make sure you see why each one fits the definition. Finally, look at the examples that do not fit the definition and make sure you understand why they do not.
+We begin with a definition. Read it slowly a few times and try to understand what all of the symbols mean. Then, look at Example \ref{ex:linear-eqn-3var} and Example \ref{ex:linear-eqn-pt-slope} and make sure you see why each one fits the definition. Finally, look at Example \ref{ex:linear-eqn-non} and make sure you understand why those equations do not fit the definition.
 
 \begin{definition} \label{def:linear-eqn}
 A \textbf{linear equation in} $n$ \textbf{variables} is an equation that can be written in the form
@@ -33,7 +58,7 @@ where $a_1, \ldots a_n, b$ are real numbers and \(n\) is a positive integer. The
 % is a linear equation in two variables. Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=2\), \(a_2=3\), \(b=22\), \(x_1=x\), and \(x_2=y\). Since \((5, 4)\) makes the equation a true statement when \(5\) is substituted for \(x\) and \(4\) is substituted for \(y\) (observe: \(2(5)+3(4)=22\)), the list \((5, 4)\) is a solution to \(2x+3y=22\). There are infinitely many others.
 % \end{example}
 
-\begin{example}
+\begin{example}\label{ex:linear-eqn-3var}
 The equation
 \[3x+5y-6z=10\]
 is a linear equation in three variables. Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=3\), \(a_2=5\), \(a_3=-6\), \(b=10\), \(x_1=x\), \(x_2=y\), and \(x_3=z\). Since substituting \(2\) for \(x\), \(2\) for \(y\), and \(1\) for \(z\) makes the equation a true statement (observe: \(3(2)+5(2)-6(1)=10\)), the list \((2, 2, 1)\) is a solution to the equation. There are infinitely many others.
@@ -45,7 +70,7 @@ is a linear equation in three variables. Using the notation in Definition \ref{d
 % which matches the form in Definition \ref{def:linear-eqn} by taking \(a_1=-3\), \(a_2=1\), \(b=5\), \(x_1=x\), and \(x_2=y\). The list \((-1, 2)\) is a solution since \(-3(-1)+1(2)=5\). The line itself is a graphical representation of the infinitely many solutions \((s_1, s_2)\).
 % \end{example}
 
-\begin{example}
+\begin{example}\label{ex:linear-eqn-pt-slope}
 The point-slope form of a line, \(y=y_0+m(x-x_0)\) is a linear equation in two variables. Take, for example, \(y=3+2(x-6)\). Using algebra, we can rewrite the equation in the form of Definition \ref{def:linear-eqn}:
 \begin{align*}
     y=3+2(x-6) &\Longrightarrow y=3+2x-12 \\
@@ -55,9 +80,16 @@ The point-slope form of a line, \(y=y_0+m(x-x_0)\) is a linear equation in two v
 Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=-2\), \(a_2=1\), \(b=-9\), \(x_1=x\), and \(x_2=y\). The line itself is a graphical representation of the infinitely many solutions \((s_1, s_2)\).
 \end{example}
 
-\begin{example}
+\begin{example}\label{ex:linear-eqn-non}
 The equations \(x^2+x+1=0\), \(4x-xy=2\), \(5\sqrt{x}=2\), and \(3x+\frac{1}{y}=y\) are \textit{not} linear equations. The terms \(x^2\), \(xy\), \(\sqrt{x}\), and \(\frac{1}{y}\) prohibit them from being rewritten in the form in Definition \ref{def:linear-eqn}.
 \end{example}
+
+\subsection{Preview Activity}
+
+Click the link or URL below to access the Preview Activity for this section. You must be logged in to Doenet for your score to be recorded. If you click the link and are taken to a page that says \textbf{Taking assignment as an anonymous user}, you are \textit{not} logged in. If that happens, click the circle with the question mark and select \textbf{Sign in to save work}. After completing the sign-in process, return here and click the link again.
+
+\doenetlink{Systems of Equations 1 Preview Activity}{https://doenet.org/code/737878}
+
 
 \section{Systems of Linear Equations}
 
