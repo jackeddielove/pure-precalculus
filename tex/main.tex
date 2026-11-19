@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumitem}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} % Ensures backward compatibility
 \usepackage{mdframed}
@@ -31,6 +32,8 @@
     skipabove=10pt,
     skipbelow=10pt
 ]{example}
+\newtheorem{activity}{Activity}
+\renewcommand{\theactivity}{\Alph{activity}} % Changes 1, 2, 3 to A, B, C
 \newcommand{\doenetlink}[2]{%
     \begin{tcolorbox}[
         colback=gray!6,
@@ -440,5 +443,8 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our r
 \end{example}
 
 \section{Activities}\label{sec-activities}
+
+\begin{activity}[activity name]
+\end{activity}
 
 \end{document}
