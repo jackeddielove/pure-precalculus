@@ -64,13 +64,10 @@
 
 \maketitle
 
-% As you read through these notes, write down any questions you have. Posing clear questions is part of the practice of mathematics. If you have a question, it is likely that someone else has the same question. You can email me the questions or ask them at the beginning of class.
 
 \section{Introduction to Linear Equations}\label{sec:introduction}
 
 We begin with a definition.
-
-% Read it slowly a few times and try to understand what all of the symbols mean. Then, look at Example \ref{ex:linear-eqn-3var} and Example \ref{ex:linear-eqn-pt-slope} and make sure you see why each one fits the definition. Finally, look at Example \ref{ex:linear-eqn-non} and make sure you understand why those equations do not fit the definition.
 
 \begin{definition} \label{def:linear-eqn}
 A \textbf{linear equation in} $n$ \textbf{variables} is an equation that can be written in the form
@@ -78,23 +75,11 @@ A \textbf{linear equation in} $n$ \textbf{variables} is an equation that can be 
 where $a_1, \ldots a_n, b$ are real numbers and \(n\) is a positive integer. The numbers \(a_1, \ldots, a_n\) are called \textbf{coefficients}. A \textbf{solution} to a linear equation in \(n\) variables is a list \((s_1, \ldots, s_n)\) of real numbers that makes the equation a true statement when the values \(s_1, \ldots, s_n\) are substituted for \(x_1, \ldots, x_n\), respectively.
 \end{definition}
 
-% \begin{example}
-% The equation
-% \[2x+3y=22\]
-% is a linear equation in two variables. Using the notation in Definition \ref{def:linear-eqn}, we have \(a_1=2\), \(a_2=3\), \(b=22\), \(x_1=x\), and \(x_2=y\). Since \((5, 4)\) makes the equation a true statement when \(5\) is substituted for \(x\) and \(4\) is substituted for \(y\) (observe: \(2(5)+3(4)=22\)), the list \((5, 4)\) is a solution to \(2x+3y=22\). There are infinitely many others.
-% \end{example}
-
 \begin{example}\label{ex:linear-eqn-3var}
 The equation
 \[3x+5y-6z=10\]
 is a linear equation in three variables. Using the notation in \cref{def:linear-eqn}, we have \(a_1=3\), \(a_2=5\), \(a_3=-6\), \(b=10\), \(x_1=x\), \(x_2=y\), and \(x_3=z\). Since substituting \(2\) for \(x\), \(2\) for \(y\), and \(1\) for \(z\) makes the equation a true statement (observe: \(3(2)+5(2)-6(1)=10\)), the list \((2, 2, 1)\) is a solution to the equation. There are infinitely many others.
 \end{example}
-
-% \begin{example}
-% The slope-intercept form of a line, \(y=mx+b\), is a linear equation in two variables. Take, for example, \(y=3x+5\). By subtracting \(3x\) from both sides and stating the coefficient of \(y\) explicitly we get
-% \[-3x+1y=5,\]
-% which matches the form in Definition \ref{def:linear-eqn} by taking \(a_1=-3\), \(a_2=1\), \(b=5\), \(x_1=x\), and \(x_2=y\). The list \((-1, 2)\) is a solution since \(-3(-1)+1(2)=5\). The line itself is a graphical representation of the infinitely many solutions \((s_1, s_2)\).
-% \end{example}
 
 \begin{example}\label{ex:linear-eqn-pt-slope}
 The point-slope form of a line, \(y=y_0+m(x-x_0)\) is a linear equation in two variables. Take, for example, \(y=3+2(x-6)\). Using algebra, we can rewrite the equation in the form of \cref{def:linear-eqn}:
@@ -148,9 +133,6 @@ A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers th
             ymin=-4, ymax=4,       % Minimum and maximum y values displayed
             grid = major,           % Adds grid lines
             width=0.85\textwidth,
-            % width=10cm,             % Width of the chart
-            % height=10cm,             % Height of the chart
-            % title={Graph of $y = 2x + 1$}
         ]
             % Plot the linear equation
             \addplot [
@@ -167,7 +149,6 @@ A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers th
                 thick,              % Line thickness
             ] {-0.5*x + 2};              
             \addlegendentry{$\frac{1}{2}x+y=2$}
-            
         \end{axis}
     \end{tikzpicture}
     \caption{The graphs of \(-x+y=-1\) and \(\frac{1}{2}x+y=2\) intersect at the point \((2, 1)\), the solution to the corresponding linear system.}
@@ -253,10 +234,7 @@ The system of equations in the previous example had a single solution, but this 
             xmin=-4, xmax=4,        % Minimum and maximum x values displayed
             ymin=-4, ymax=4,       % Minimum and maximum y values displayed
             grid = major,           % Adds grid lines
-            width=0.85\textwidth,
-            % width=10cm,             % Width of the chart
-            % height=10cm,             % Height of the chart
-            % title={Graph of $y = 2x + 1$}
+            width=0.85\textwidth
         ]
             % Plot the linear equation
             \addplot [
@@ -273,7 +251,6 @@ The system of equations in the previous example had a single solution, but this 
                 thick,              % Line thickness
             ] {x + 2};              
             \addlegendentry{$-x+y=2$}
-            
         \end{axis}
     \end{tikzpicture}
     \caption{The graphs of \(-x+y=-1\) and \(-x+y=2\) do not intersect; the corresponding linear system has no solutions.}
