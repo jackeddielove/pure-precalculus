@@ -33,7 +33,8 @@
     skipbelow=10pt
 ]{example}
 \newtheorem{activity}{Activity}
-\renewcommand{\theactivity}{\Alph{activity}} % Changes 1, 2, 3 to A, B, C
+\renewcommand{\theactivity}{\Alph{activity}}
+
 \newcommand{\doenetlink}[2]{%
     \begin{tcolorbox}[
         colback=gray!6,
@@ -444,7 +445,30 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our r
 
 \section{Activities}\label{sec-activities}
 
-\begin{activity}[activity name]
+\begin{activity}Working with Linear Equations
+
+    \begin{enumerate}
+        \item Determine whether the following equations are linear. If they are, rewrite them in the form of \cref{def:linear-eqn}.
+        \begin{enumerate}[label=(\alph*)]
+            \item \(2x+3y=5\)
+            \item \(x^2+y=4\)
+            \item \(3x-4y+z=7\)
+            \item \(xy+z=1\)
+        \end{enumerate}
+        \item Determine whether the following pairs of linear equations are equivalent. (Hint: Solve each equation for one of the variables.)
+        \begin{enumerate}[label=(\alph*)]
+            \item \(2x+3y=5\) and \(4x=10-6y\)
+            \item \(x-y+z=2\) and \(2(x+z)=2y+4\)
+            \item \(3r+4s=7\) and \(6r+8s=16\)
+            \item \(a+b+c+d=1\) and \(2a+2b+2c+2d=2\)
+        \end{enumerate}
+        \item Create a list of three linear equations in two variables that are equivalent to each other. Graph the equations and verify that they have the same solution set. What is a reliable way to create an equivalent equation from a given linear equation?
+        \item Use \href{https://www.desmos.com/3d}{Desmos 3D} (\url{https://www.desmos.com/3d}) to graph several linear equations in three variables. What do you notice about each of the graphs? If you graph more than one equation in the same viewing windos, what do you notice about their intersections?
+    \end{enumerate}
+\end{activity}
+
+\begin{activity}Solving Systems of Linear Equations
+
 \end{activity}
 
 \end{document}
