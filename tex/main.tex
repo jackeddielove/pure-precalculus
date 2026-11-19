@@ -395,7 +395,48 @@ Thus, \((2, 1)\) is a solution to the system of equations, confirming our result
 \end{example}
 
 \begin{example}\label{ex:elimination-method-2}
-    
+    Now consider the \(3\times 3\) system from \cref{ex:substitution-method-2}:
+\begin{align*}
+    x+y+z&=6 \\
+    2x-y+3z&=14 \\
+    -x+4y-2z&=-2.
+\end{align*}
+We can eliminate \(z\) from the second and third equations by adding appropriate multiples of the first equation to them. Specifically, we can add \(-3\) times the first equation to the second equation and add \(2\) times the first equation to the third equation:
+\begin{align*}
+    2x-y+3z-3(x+y+z)&=14-3(6) \\
+    2x-y+3z-3x-3y-3z&=14-18 \\
+    -x-4y&=-4, \\[\baselineskip]
+    -x+4y-2z+2(x+y+z)&=-2+2(6) \\
+    -x+4y-2z+2x+2y+2z&=-2+12 \\
+    x+6y&=10.
+\end{align*}
+Now we have a system of two equations in two variables:
+\begin{align*}
+    -x-4y&=-4 \\
+    x+6y&=10.
+\end{align*}
+We can eliminate \(x\) by adding the two equations:
+\begin{align*}
+    (-x-4y)+(x+6y)&=(-4)+10 \\
+    2y&=6 \\
+    y&=3.
+\end{align*}
+Now that we know \(y=3\), we can substitute \(3\) for \(y\) in either of the two-variable equations to find \(x\). Using the first equation:
+\begin{align*}
+    -x-4y&=-4 \\
+    -x-4(3)&=-4 \\
+    -x-12&=-4 \\
+    -x&=8 \\
+    x&=-8.
+\end{align*}
+Finally, we can substitute \(x=-8\) and \(y=3\) into the first equation to find \(z\):
+\begin{align*}
+    x+y+z&=6 \\
+    -8+3+z&=6 \\
+    -5+z&=6 \\
+    z&=11.
+\end{align*}
+Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our result in \cref{ex:substitution-method-2}.
 \end{example}
 
 \section{Activities}\label{sec-activities}
