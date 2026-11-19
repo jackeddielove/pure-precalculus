@@ -57,8 +57,14 @@
     innerbottommargin=10pt,
     userdefinedwidth=0.8\textwidth,
     align=center,
-    nobreak=true
+    nobreak=true,
+    settings={\refstepcounter{calloutbox}},
+    frametitle={\textbf{Box \thecalloutbox}}
 ]{calloutbox}
+\newcounter{calloutbox}
+\renewcommand{\thecalloutbox}{\arabic{calloutbox}}
+\crefname{calloutbox}{box}{boxes}
+\Crefname{calloutbox}{Box}{Boxes}
 
 \title{Systems of Equations 1}
 \author{}
@@ -163,7 +169,7 @@ A \textbf{solution} of the system is a list \((s_1, \ldots, s_m)\) of numbers th
 The system of equations in the previous example had a single solution, but this is not always the case. In fact, we have the following fact about systems of linear equations:
 
 \begin{calloutbox}
-\textbf{Solution Sets of Linear Systems}: A system of linear equations has either 1 solution, no solutions, or infinitely many solutions. A system with 1 or infinitely many solutions is called \textbf{consistent}. A system with no solutions is called \textbf{inconsistent}.
+\textbf{Solution Sets of Linear Systems} A system of linear equations has either 1 solution, no solutions, or infinitely many solutions. A system with 1 or infinitely many solutions is called \textbf{consistent}. A system with no solutions is called \textbf{inconsistent}.
 \end{calloutbox}
 
 \begin{example}
@@ -443,17 +449,27 @@ Finally, we can substitute \(x=-8\) and \(y=3\) into the first equation to find 
 Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our result in \cref{ex:substitution-method-2}.
 \end{example}
 
+\begin{calloutbox}
+    \textbf{The Elimination Method} To solve a system of linear equations using the elimination method, follow these steps:
+    \begin{enumerate}
+        \item Add or subtract some multiple of one equation from another to eliminate one variable.
+        \item Repeat step 1 until you have a single equation in one variable.
+        \item Solve for that variable, then back-substitute to find the other variables.
+    \end{enumerate}
+\end{calloutbox}
+
 \section{Activities}\label{sec-activities}
 
 \begin{activity}Working with Linear Equations
 
     \begin{enumerate}
-        \item Determine whether the following equations are linear. If they are, rewrite them in the form of \cref{def:linear-eqn}.
+        \item Determine whether the following equations are linear. If they are, give \(n\), \(a_1, \ldots, a_n\), \(x_1, \ldots, x_n\), and \(b\) so that they fit the form of \cref{def:linear-eqn}.
         \begin{enumerate}[label=(\alph*)]
             \item \(2x+3y=5\)
             \item \(x^2+y=4\)
             \item \(3x-4y+z=7\)
             \item \(xy+z=1\)
+            \item \(5r+2s-10=3t+u\)
         \end{enumerate}
         \item Determine whether the following pairs of linear equations are equivalent. (Hint: Solve each equation for one of the variables.)
         \begin{enumerate}[label=(\alph*)]
@@ -468,7 +484,46 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our r
 \end{activity}
 
 \begin{activity}Solving Systems of Linear Equations
-
+    \begin{enumerate}
+        \item Use the substitution method to determine whether the system has a single solution, no solutions, or infinitely many solutions.
+        \begin{enumerate}[label=(\alph*)]
+            \item \(x+y=5\), \(2x-y=4\)
+            \item \(2x+3y=12\), \(4x-24=-6y\)
+            \item \(x+y+z=6\), \(2x-y+3z=14\), \(-x+4y-2z=-2\)
+            \item \(x+2y+3z=14\), \(2x-y+z=5\), \(-3x+4y+z=4\)
+        \end{enumerate}
+        \item Use the elimination method to determine whether the system has a single solution, no solutions, or infinitely many solutions.
+        \begin{enumerate}[label=(\alph*)]
+            \item \(x - y + 2z = 5\), \(2x + y - z = 1\), \(-x + 3y + z = 4\)
+            \item \(x + y - z + 2w = 4\), \(2x - y + z - w = 1\), \(3x + w = 7\)
+            \item \(x + 2y - 3z = 4\), \(2x - y + z = 3\)
+        \end{enumerate}
+    \end{enumerate}
+\begin{calloutbox}
+    \textbf{Possible solutions sets for \(n\times m\) systems of equations} Given a system of \(n\) equations in \(m\) variables, we have the following:
+\begin{itemize}
+    \item If \(n<m\), ``most'' systems have infinitely many solutions. There are special cases where the system has no solutions. There are no cases where the system has a single solution.
+    \begin{itemize}
+        \item \emph{Geometric intuition (e.g., \(n=2, m=3\)):} Two nonparallel planes in \(\mathbb{R}^3\) intersect along a line (infinitely many points). If the planes are parallel and distinct, they never meet (no solution), and two planes can never intersect at a single isolated point.
+    \end{itemize}
+    \item If \(n=m\), ``most'' systems have one solution. There are special cases where the system has no solutions or infinitely many solutions.
+    \begin{itemize}
+        \item \emph{Geometric intuition (e.g., \(n=2, m=2\)):} Two lines with different slopes cross at a single point. In special cases, the lines are parallel and distinct (no solution) or identical (infinitely many solutions).
+    \end{itemize}
+    \item If \(n>m\), ``most'' systems have no solutions. There are special cases where the system has one solution or infinitely many solutions.
+    \begin{itemize}
+        \item \emph{Geometric intuition (e.g., \(n=3, m=2\)):} Three random lines in \(\mathbb{R}^2\) generally do not all pass through a common point. In special cases, the third line happens to pass through the intersection of the first two (one solution), or all three lines coincide (infinitely many solutions).
+    \end{itemize}
+\end{itemize}
+\end{calloutbox}
 \end{activity}
 
 \end{document}
+
+
+% Given a system of \(n\) equations in \(m\) variables, we have the following:
+%     \begin{itemize}
+%         \item If \(n<m\), ``most'' systems have infinitely many solutions. There are special cases where the system has no solutions. There are no cases where the system has a single solution.
+%         \item If \(n=m\), ``most'' systems have one solution. There are special cases where the system has no solutions or infinitely many solutions.
+%         \item If \(n>m\), ``most'' systems have no solutions. There are special cases where the system has one solution or infinitely many solutions.
+%     \end{itemize}
