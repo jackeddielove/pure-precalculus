@@ -107,15 +107,15 @@ Click the link or URL below to access the Preview Activity for this section. You
 \begin{definition}
 A \textbf{system of linear equations} is a collection of one or more linear equations involving the same variables:
 \begin{align*}
-    a_{11}x_1+\cdots+a_{1n}x_n&=b_1 \\
+    a_{11}x_1+\cdots+a_{1m}x_m&=b_1 \\
     &\vdots \\
-    a_{k1}x_1+\cdots+a_{kn}x_n&=b_k.
+    a_{n1}x_1+\cdots+a_{nm}x_m&=b_n.
 \end{align*}
-A \textbf{solution} of the system is a list \((s_1, \ldots, s_n)\) of numbers that is a solution to each of the equations in the system. The \textbf{solution set} of a system of linear equations is the set of all solutions to the system. Two systems of linear equations are \textbf{equivalent} if they have the same solution set.
+A \textbf{solution} of the system is a list \((s_1, \ldots, s_m)\) of numbers that is a solution to each of the equations in the system. The \textbf{solution set} of a system of linear equations is the set of all solutions to the system. Two systems of linear equations are \textbf{equivalent} if they have the same solution set. A system of \(n\) equations in \(m\) variables is called an \textbf{\(n \times m\) system}.
 \end{definition}
 
 \begin{example}\label{ex:linear-system-1}
-    Consider the system of linear equations
+    Consider the \(2 \times 2\) system of linear equations
     \begin{align*}
         -x+y&=-1 \\
         \frac{1}{2}x+y&=2
@@ -163,7 +163,7 @@ The system of equations in the previous example had a single solution, but this 
 \end{calloutbox}
 
 \begin{example}
-    Consider the system of linear equations
+    Consider the \(2 \times 3\) system of linear equations
     \begin{align*}
         x+z&=2 \\
         x+y-z&=0.
@@ -260,7 +260,7 @@ The system of equations in the previous example had a single solution, but this 
 
 \section{Solving Systems of Equations}\label{sec:solving-systems}
 
-In this section, we introduce two methods for solving systems of linear equations: the substitution method and the elimination method. These methods work well for small systems; for larger systems we will need techniques that will be introduced in \cref{sec:matrices-systems}.
+In this section, we introduce two methods for solving systems of linear equations: the substitution method and the elimination method. These methods work well for small systems; for larger systems we will need techniques that will be introduced in the next chapter, Systems of Equations 2.
 
 \subsection*{The substitution method}\label{subsec:substitution-method}
 
@@ -373,7 +373,25 @@ In \cref{ex:substitution-method-1,ex:substitution-method-2}, each system of equa
 The elimination method is often faster, especially for larger systems of equations. In fact, we will formalize this method in a later section and use it to solve systems of linear equations in general. For now, we will use it to solve the systems in \cref{ex:substitution-method-1,ex:substitution-method-2} above.
 
 \begin{example}\label{ex:elimination-method-1}
-    
+    Recall the following system of linear equations from \cref{ex:substitution-method-1}:
+\begin{align*}
+    -x+y&=-1 \\
+    \frac{1}{2}x+y&=2.
+\end{align*}
+With the elimination method, we eliminate one of the variables by adding or subtracting some multiple of one of the equations from the other. In this case, we can eliminate \(y\) by subtracting the first equation from the second:
+\begin{align*}
+    \frac{1}{2}x+y-(-x+y)&=2-(-1) \\
+    \frac{1}{2}x+y+x-y&=3 \\
+    \frac{3}{2}x&=3 \\
+    x&=2.
+\end{align*}
+Now that we know \(x=2\), we can substitute \(2\) for \(x\) in either of the original equations to find \(y\). Using the first equation:
+\begin{align*}
+    -x+y&=-1 \\
+    -2+y&=-1 \\
+    y&=1.
+\end{align*}
+Thus, \((2, 1)\) is a solution to the system of equations, confirming our result in \cref{ex:substitution-method-1}.
 \end{example}
 
 \begin{example}\label{ex:elimination-method-2}
