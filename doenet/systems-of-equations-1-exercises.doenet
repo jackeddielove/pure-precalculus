@@ -155,3 +155,43 @@
 
 
 </problem>
+
+<problem>
+  <p>Each of the following images shows the graphs of three linear equations in three variables. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
+
+  <!-- Part 1: Three planes meeting at a single point (Unique solution) -->
+  <part>
+    <image source="../docs/systems-of-equations-1-planes-point.svg" width="320px">
+      <shortDescription>Three coordinate planes intersecting at a single point at the origin</shortDescription>
+    </image>
+    <answer name="imgAns1">
+      <choice>Inconsistent (no solution)</choice>
+      <choice>Consistent with infinitely many solutions</choice>
+      <choice credit="1">Consistent with a unique solution</choice>
+    </answer>
+  </part>
+
+  <!-- Part 2: Three planes forming a triangular prism (Inconsistent) -->
+  <part>
+    <image source="../docs/systems-of-equations-1-planes-prism.svg" width="320px">
+      <shortDescription>Three planes forming a triangular prism with three parallel lines of intersection and no common point</shortDescription>
+    </image>
+    <answer name="imgAns2">
+      <choice credit="1">Inconsistent (no solution)</choice>
+      <choice>Consistent with infinitely many solutions</choice>
+      <choice>Consistent with a unique solution</choice>
+    </answer>
+  </part>
+
+  <!-- Part 3: Three planes meeting along a single line (Infinitely many solutions) -->
+  <part>
+    <image source="../docs/systems-of-equations-1-three-planes.svg" width="320px">
+      <shortDescription>Three planes intersecting along a single common line</shortDescription>
+    </image>
+    <answer name="imgAns3">
+      <choice>Inconsistent (no solution)</choice>
+      <choice credit="1">Consistent with infinitely many solutions</choice>
+      <choice>Consistent with a unique solution</choice>
+    </answer>
+  </part>
+</problem>
