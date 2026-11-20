@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
+\usepackage{xurl}
 \usepackage{hyperref} % Load this last in your preamble
 \hypersetup{
     colorlinks=true,
@@ -168,7 +169,7 @@ A \textbf{solution} of the system is a list \((s_1, \ldots, s_m)\) of numbers th
 
 The system of equations in the previous example had a single solution, but this is not always the case. In fact, we have the following fact about systems of linear equations:
 
-\begin{calloutbox}
+\begin{calloutbox}\label{box:solution-sets}
 \textbf{Solution Sets of Linear Systems} A system of linear equations has either 1 solution, no solutions, or infinitely many solutions. A system with 1 or infinitely many solutions is called \textbf{consistent}. A system with no solutions is called \textbf{inconsistent}.
 \end{calloutbox}
 
@@ -368,7 +369,7 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations. In fact, it is t
 \end{example}
 
 In \cref{ex:substitution-method-1,ex:substitution-method-2}, each system of equations had a single solution. During the in-class activity, you will see that the substitution method can also be used to find infinitely many solutions or to determine that a system has no solutions. For now, we summarize the steps of the substitution method:
-\begin{calloutbox}
+\begin{calloutbox}\label{box:substitution-method}
     \textbf{The Substitution Method} To solve a system of linear equations using the substitution method, follow these steps:
     \begin{enumerate}
         \item Solve one of the equations for one variable in terms of the others.
@@ -498,8 +499,9 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our r
             \item \(x + y - z + 2w = 4\), \(2x - y + z - w = 1\), \(3x + w = 7\)
             \item \(x + 2y - 3z = 4\), \(2x - y + z = 3\)
         \end{enumerate}
+        \item Use \href{https://www.desmos.com/calculator}{Desmos} (\url{https://www.desmos.com/calculator}) or \href{https://www.desmos.com/3d}{Desmos 3D} (\url{https://www.desmos.com/3d}) to graph each system in this activity and determine which of the cases in \Cref{box:solution-sets-taxonomy} it satisfies.
     \end{enumerate}
-\begin{calloutbox}
+\begin{calloutbox}\label{box:solution-sets-taxonomy}
     \textbf{Possible solutions sets for \(n\times m\) systems of equations} Given a system of \(n\) equations in \(m\) variables, we have the following:
 \begin{itemize}
     \item If \(n<m\), ``most'' systems have infinitely many solutions. There are special cases where the system has no solutions. There are no cases where the system has a single solution.
@@ -519,11 +521,3 @@ Thus, \((-8, 3, 11)\) is a solution to the system of equations, confirming our r
 \end{activity}
 
 \end{document}
-
-
-% Given a system of \(n\) equations in \(m\) variables, we have the following:
-%     \begin{itemize}
-%         \item If \(n<m\), ``most'' systems have infinitely many solutions. There are special cases where the system has no solutions. There are no cases where the system has a single solution.
-%         \item If \(n=m\), ``most'' systems have one solution. There are special cases where the system has no solutions or infinitely many solutions.
-%         \item If \(n>m\), ``most'' systems have no solutions. There are special cases where the system has one solution or infinitely many solutions.
-%     \end{itemize}
