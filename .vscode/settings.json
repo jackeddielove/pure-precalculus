@@ -5,6 +5,7 @@
     "**/*.fls": true,
     "**/*.log": true,
     "**/*.synctex.gz": true,
-    "**/*.xdv": true
+    "**/*.xdv": true,
+    "docs/figures/*.pdf": true
   }
 }
