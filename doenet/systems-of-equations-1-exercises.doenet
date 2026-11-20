@@ -72,10 +72,10 @@
       <choice name="c1_inf">Consistent with infinitely many solutions</choice>
       <choice name="c1_uni">Consistent with a unique solution</choice>
     </choiceInput>
-    <conditionalContent condition="$c1_uni.selected">
+    <group hide="not $c1_uni.selected">
       <p>Enter the unique solution:</p>
       <p><m>x = </m><mathInput name="x1"/>, <m>y = </m><mathInput name="y1"/></p>
-    </conditionalContent>
+    </group>
     <answer name="ans1">
       <award>
         <when>$c1_inc.selected</when>
@@ -94,13 +94,10 @@
       <choice name="c2_inf">Consistent with infinitely many solutions</choice>
       <choice name="c2_uni">Consistent with a unique solution</choice>
     </choiceInput>
-    <p>
-      If there is a unique solution, enter it below (otherwise leave blank):
-    </p>
-    <p>
-      <m>x = </m><mathInput name="x2"/>, 
-      <m>y = </m><mathInput name="y2"/>
-    </p>
+    <group hide="not $c2_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="x2"/>, <m>y = </m><mathInput name="y2"/></p>
+    </group>
     <answer name="ans2">
       <award>
         <when>$c2_uni.selected and $x2 = 1 and $y2 = 2</when>
@@ -120,17 +117,13 @@
       <choice name="c3_inf">Consistent with infinitely many solutions</choice>
       <choice name="c3_uni">Consistent with a unique solution</choice>
     </choiceInput>
-    <p>
-      If there is a unique solution, enter it below (otherwise leave blank):
-    </p>
-    <p>
-      <m>x = </m><mathInput name="x3"/>, 
-      <m>y = </m><mathInput name="y3"/>, 
-      <m>z = </m><mathInput name="z3"/>
-    </p>
+    <group hide="not $c3_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="x3"/>, <m>y = </m><mathInput name="y3"/>, <m>z = </m><mathInput name="z3"/></p>
+    </group>
     <answer name="ans3">
       <award>
-        <when>$c3_inf.selected and $x3 = "" and $y3 = "" and $z3 = ""</when>
+        <when>$c3_inf.selected</when>
       </award>
     </answer>
   </part>
