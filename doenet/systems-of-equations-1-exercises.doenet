@@ -1,0 +1,37 @@
+<problem>
+  <title>Solving and Classifying a 2×2 Linear System</title>
+
+  <p>Consider the following system of linear equations:</p>
+  <md>
+    <mrow>2x + 3y = 0</mrow>
+    <mrow>4x - y = 14</mrow>
+  </md>
+
+  <part>
+    <p>Find the solution to the system.</p>
+    <p>
+      <m>x = </m><mathInput name="userX"/>, 
+      <m>y = </m><mathInput name="userY"/>
+    </p>
+    <answer name="solAns">
+      <award>
+        <when>$userX = 3 and $userY = -2</when>
+      </award>
+    </answer>
+
+    <hint>
+      <p>
+        Try eliminating <m>y</m> by multiplying the second equation by <m>3</m> and adding it to the first equation.
+      </p>
+    </hint>
+  </part>
+
+  <part>
+    <p>Based on its solution set, how is this system classified?</p>
+    <answer name="classAns">
+      <choice credit="1">Consistent and independent</choice>
+      <choice>Consistent and dependent</choice>
+      <choice>Inconsistent</choice>
+    </answer>
+  </part>
+</problem>
