@@ -4,6 +4,7 @@
     "**/*.fdb_latexmk": true,
     "**/*.fls": true,
     "**/*.log": true,
+    "**/*.out": true,
     "**/*.synctex.gz": true,
     "**/*.xdv": true,
     "docs/figures/*.pdf": true
