@@ -55,10 +55,10 @@
 
 
 <problem>
-  <p>Use <ref to="https://desmos.com">Desmos</ref> 
-  (<ref to="https://desmos.com">https://desmos.com</ref>) 
-  or <ref to="https://desmos.com">Desmos 3D</ref> 
-  (<ref to="https://desmos.com">https://desmos.com</ref>) 
+  <p>Use <ref to="https://www.desmos.com/calculator">Desmos</ref> 
+  (<ref to="https://www.desmos.com/calculator">https://www.desmos.com/calculator</ref>) 
+  or <ref to="https://www.desmos.com/3d">Desmos 3D</ref> 
+  (<ref to="https://www.desmos.com/3d">https://www.desmos.com/3d</ref>) 
   to graph each system and determine whether it is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions? If it has a unique solution, find it.</p>
 
   <!-- Part 1: Inconsistent (2x2) -->
