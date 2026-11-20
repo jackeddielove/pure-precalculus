@@ -140,29 +140,13 @@
 </problem>
 
 
-
-
-<problem>
-
-<p>Each of the following images shows the graphs of two or more linear equations. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
-
-<graph xmin="-2" xmax="7" ymin="-2" ymax="7" size="small" aspectRatio="1" showNavigation="false" grid="1 1">
-  <xLabel><m>x</m></xLabel>
-  <yLabel><m>y</m></yLabel>
-  <line through="(0,5) (5,0)" styleNumber="1"/>
-  <line through="(2,0) (4,4)" styleNumber="2"/>
-</graph>
-
-
-</problem>
-
 <problem>
   <p>Each of the following images shows the graphs of two or more linear equations. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
 
-  <!-- Part 1: Three planes meeting at a single point (Unique solution) -->
+  <!-- Part 1: 2D Two intersecting lines (Unique solution) -->
   <part>
-    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-planes-point.png" width="320px">
-      <shortDescription>Graph of three planes in three-dimensional space</shortDescription>
+    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-lines-two.png" width="320px">
+      <shortDescription>Graph of two lines in the coordinate plane</shortDescription>
     </image>
     <answer name="imgAns1">
       <choice>Inconsistent (no solution)</choice>
@@ -171,28 +155,65 @@
     </answer>
   </part>
 
-  <!-- Part 2: Three planes forming a triangular prism (Inconsistent) -->
+  <!-- Part 2: 2D Three concurrent lines (Unique solution) -->
   <part>
-    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-planes-prism.png" width="320px">
-      <shortDescription>Graph of three planes in three-dimensional space</shortDescription>
+    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-lines-concurrent.png" width="320px">
+      <shortDescription>Graph of three lines in the coordinate plane</shortDescription>
     </image>
     <answer name="imgAns2">
+      <choice>Inconsistent (no solution)</choice>
+      <choice>Consistent with infinitely many solutions</choice>
+      <choice credit="1">Consistent with a unique solution</choice>
+    </answer>
+  </part>
+
+  <!-- Part 3: 2D Three generic lines (Inconsistent) -->
+  <part>
+    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-lines-triangle.png" width="320px">
+      <shortDescription>Graph of three lines in the coordinate plane</shortDescription>
+    </image>
+    <answer name="imgAns3">
       <choice credit="1">Inconsistent (no solution)</choice>
       <choice>Consistent with infinitely many solutions</choice>
       <choice>Consistent with a unique solution</choice>
     </answer>
   </part>
 
-  <!-- Part 3: Three planes meeting along a single line (Infinitely many solutions) -->
+  <!-- Part 4: 3D Three planes meeting at a single point (Unique solution) -->
+  <part>
+    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-planes-point.png" width="320px">
+      <shortDescription>Graph of three planes in three-dimensional space</shortDescription>
+    </image>
+    <answer name="imgAns4">
+      <choice>Inconsistent (no solution)</choice>
+      <choice>Consistent with infinitely many solutions</choice>
+      <choice credit="1">Consistent with a unique solution</choice>
+    </answer>
+  </part>
+
+  <!-- Part 5: 3D Three planes forming a triangular prism (Inconsistent) -->
+  <part>
+    <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-planes-prism.png" width="320px">
+      <shortDescription>Graph of three planes in three-dimensional space</shortDescription>
+    </image>
+    <answer name="imgAns5">
+      <choice credit="1">Inconsistent (no solution)</choice>
+      <choice>Consistent with infinitely many solutions</choice>
+      <choice>Consistent with a unique solution</choice>
+    </answer>
+  </part>
+
+  <!-- Part 6: 3D Three planes meeting along a single line (Infinitely many solutions) -->
   <part>
     <image source="https://raw.githubusercontent.com/jackeddielove/pure-precalculus/main/docs/systems-of-equations-1-three-planes.png" width="320px">
       <shortDescription>Graph of three planes in three-dimensional space</shortDescription>
     </image>
-    <answer name="imgAns3">
+    <answer name="imgAns6">
       <choice>Inconsistent (no solution)</choice>
       <choice credit="1">Consistent with infinitely many solutions</choice>
       <choice>Consistent with a unique solution</choice>
     </answer>
   </part>
 </problem>
+
 
