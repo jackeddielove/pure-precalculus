@@ -1,47 +1,146 @@
 <problem>
-
-<p>Use the substitution or elimination method to find the solutions to the following systems of equations. Each system has a unique solution.</p>
+  <p>Use the substitution or elimination method to find the solutions to the following systems of equations. Each system has a unique solution.</p>
  
   <part>
-      <p>
-        <m>2x + 3y = 0</m>, 
-        <m>4x - y = 14</m>
-      </p>
     <p>
-      <m>x = </m><mathInput name="userX"/>, 
-      <m>y = </m><mathInput name="userY"/>
+      <m>2x + 3y = 0</m>, 
+      <m>4x - y = 14</m>
     </p>
-    <answer name="solAns">
+    <p>
+      <m>x = </m><mathInput name="userX1"/>, 
+      <m>y = </m><mathInput name="userY1"/>
+    </p>
+    <answer name="solAns1">
       <award>
-        <when>$userX = 3 and $userY = -2</when>
+        <when>$userX1 = 3 and $userY1 = -2</when>
       </award>
     </answer>
   </part>
 
-    <part>
-      <p>
-        <m>2x + 3y = 0</m>, 
-        <m>4x - y = 14</m>
-      </p>
+  <part>
     <p>
-      <m>x = </m><mathInput name="userX"/>, 
-      <m>y = </m><mathInput name="userY"/>
+      <m>x + 2y = 5</m>, 
+      <m>3x - y = 1</m>
     </p>
-    <answer name="solAns">
+    <p>
+      <m>x = </m><mathInput name="userX2"/>, 
+      <m>y = </m><mathInput name="userY2"/>
+    </p>
+    <answer name="solAns2">
       <award>
-        <when>$userX = 3 and $userY = -2</when>
+        <when>$userX2 = 1 and $userY2 = 2</when>
       </award>
     </answer>
   </part>
 
+  <part>
+    <p>
+      <m>x + y + z = 4</m>, 
+      <m>2x - y + z = 8</m>, 
+      <m>x + 2y - z = -3</m>
+    </p>
+    <p>
+      <m>x = </m><mathInput name="userX3"/>, 
+      <m>y = </m><mathInput name="userY3"/>, 
+      <m>z = </m><mathInput name="userZ3"/>
+    </p>
+    <answer name="solAns3">
+      <award>
+        <when>$userX3 = 2 and $userY3 = -1 and $userZ3 = 3</when>
+      </award>
+    </answer>
+  </part>
 </problem>
+
 
 
 <problem>
+  <p>Use <ref to="https://desmos.com">Desmos</ref> 
+  (<ref to="https://desmos.com">https://desmos.com</ref>) 
+  or <ref to="https://desmos.com">Desmos 3D</ref> 
+  (<ref to="https://desmos.com">https://desmos.com</ref>) 
+  to graph each system and determine whether it is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions? If it has a unique solution, find it.</p>
 
-<p>Use substitution, elimination, or a graphing device to detemine whether the following systems are consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions? If it has a unique solution, find it.</p>
+  <!-- Part 1: Inconsistent (2x2) -->
+  <part>
+    <p>
+      <m>2x - 4y = 6</m>, 
+      <m>-3x + 6y = 5</m>
+    </p>
+    <choiceInput name="choice1">
+      <choice name="c1_inc">Inconsistent</choice>
+      <choice name="c1_inf">Consistent with infinitely many solutions</choice>
+      <choice name="c1_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <p>
+      If there is a unique solution, enter it below (otherwise leave blank):
+    </p>
+    <p>
+      <m>x = </m><mathInput name="x1"/>, 
+      <m>y = </m><mathInput name="y1"/>
+    </p>
+    <answer name="ans1">
+      <award>
+        <when>$c1_inc.selected and $x1 = "" and $y1 = ""</when>
+      </award>
+    </answer>
+  </part>
 
+  <!-- Part 2: Consistent with a unique solution (2x2) -->
+  <part>
+    <p>
+      <m>3x + 2y = 7</m>, 
+      <m>5x - y = 3</m>
+    </p>
+    <choiceInput name="choice2">
+      <choice name="c2_inc">Inconsistent</choice>
+      <choice name="c2_inf">Consistent with infinitely many solutions</choice>
+      <choice name="c2_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <p>
+      If there is a unique solution, enter it below (otherwise leave blank):
+    </p>
+    <p>
+      <m>x = </m><mathInput name="x2"/>, 
+      <m>y = </m><mathInput name="y2"/>
+    </p>
+    <answer name="ans2">
+      <award>
+        <when>$c2_uni.selected and $x2 = 1 and $y2 = 2</when>
+      </award>
+    </answer>
+  </part>
+
+  <!-- Part 3: Consistent with infinitely many solutions (3x3) -->
+  <part>
+    <p>
+      <m>x + y - 2z = 3</m>, 
+      <m>2x - y + z = 1</m>, 
+      <m>3x - z = 4</m>
+    </p>
+    <choiceInput name="choice3">
+      <choice name="c3_inc">Inconsistent</choice>
+      <choice name="c3_inf">Consistent with infinitely many solutions</choice>
+      <choice name="c3_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <p>
+      If there is a unique solution, enter it below (otherwise leave blank):
+    </p>
+    <p>
+      <m>x = </m><mathInput name="x3"/>, 
+      <m>y = </m><mathInput name="y3"/>, 
+      <m>z = </m><mathInput name="z3"/>
+    </p>
+    <answer name="ans3">
+      <award>
+        <when>$c3_inf.selected and $x3 = "" and $y3 = "" and $z3 = ""</when>
+      </award>
+    </answer>
+  </part>
 </problem>
+
+
+
 
 <problem>
 
