@@ -1,0 +1,66 @@
+\usepackage{graphicx}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Ensures backward compatibility
+\usepackage{mdframed}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{xurl}
+\usepackage{hyperref} % Load this last in your preamble
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!70!black,
+    linkcolor=purple!70!black
+}
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\surroundwithmdframed[
+    hidealllines=true,
+    leftline=true,
+    linewidth=1.5pt,
+    linecolor=gray!50,
+    innerleftmargin=10pt,
+    innerrightmargin=0pt,
+    innertopmargin=2pt,
+    innerbottommargin=2pt,
+    skipabove=10pt,
+    skipbelow=10pt
+]{example}
+\newtheorem{activity}{Activity}
+\renewcommand{\theactivity}{\Alph{activity}}
+
+\newcommand{\doenetlink}[2]{%
+    \begin{tcolorbox}[
+        colback=gray!6,
+        colframe=blue!60!black,
+        boxrule=0pt,
+        leftrule=3pt,
+        arc=2pt,
+        left=8pt, right=8pt, top=6pt, bottom=6pt,
+        before skip=10pt, after skip=10pt
+    ]
+    \textbf{\href{#2}{#1}} \\
+    {\small\ttfamily \url{#2}}
+    \end{tcolorbox}%
+}
+\newmdenv[
+    backgroundcolor=gray!15,
+    linecolor=black,
+    linewidth=1pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    userdefinedwidth=0.8\textwidth,
+    align=center,
+    nobreak=true,
+    settings={\refstepcounter{calloutbox}},
+    frametitle={\textbf{Box \thecalloutbox}}
+]{calloutbox}
+\newcounter{calloutbox}
+\renewcommand{\thecalloutbox}{\arabic{calloutbox}}
+\crefname{calloutbox}{box}{boxes}
+\Crefname{calloutbox}{Box}{Boxes}
