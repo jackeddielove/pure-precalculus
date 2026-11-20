@@ -146,4 +146,12 @@
 
 <p>Each of the following images shows the graphs of two or more linear equations. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
 
+<graph xmin="-2" xmax="7" ymin="-2" ymax="7" size="small" aspectRatio="1" showNavigation="false" grid="1 1">
+  <xLabel><m>x</m></xLabel>
+  <yLabel><m>y</m></yLabel>
+  <line through="(0,5) (5,0)" styleNumber="1"/>
+  <line through="(2,0) (4,4)" styleNumber="2"/>
+</graph>
+
+
 </problem>
