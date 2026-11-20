@@ -157,7 +157,7 @@
 </problem>
 
 <problem>
-  <p>Each of the following images shows the graphs of three linear equations in three variables. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
+  <p>Each of the following images shows the graphs of two or more linear equations. Determine whether the corresponding system is consistent or inconsistent. If it is consistent, does it have a unique solution or infinitely many solutions?</p>
 
   <!-- Part 1: Three planes meeting at a single point (Unique solution) -->
   <part>
