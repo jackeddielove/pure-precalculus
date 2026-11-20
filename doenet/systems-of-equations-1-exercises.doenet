@@ -72,16 +72,13 @@
       <choice name="c1_inf">Consistent with infinitely many solutions</choice>
       <choice name="c1_uni">Consistent with a unique solution</choice>
     </choiceInput>
-    <p>
-      If there is a unique solution, enter it below (otherwise leave blank):
-    </p>
-    <p>
-      <m>x = </m><mathInput name="x1"/>, 
-      <m>y = </m><mathInput name="y1"/>
-    </p>
+    <conditionalContent condition="$c1_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="x1"/>, <m>y = </m><mathInput name="y1"/></p>
+    </conditionalContent>
     <answer name="ans1">
       <award>
-        <when>$c1_inc.selected and $x1 = "" and $y1 = ""</when>
+        <when>$c1_inc.selected</when>
       </award>
     </answer>
   </part>
