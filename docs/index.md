@@ -9,4 +9,4 @@ Course notes, preview activities, and exercises.
 
 | Section | Notes (PDF) | Preview Activity | Exercises |
 | :--- | :--- | :--- | :--- |
-| **01. Systems of Equations 1** | [Read Notes](01-systems-of-equations-1.pdf) | [Start Preview](https://doenet.org) | [Start Exercises](https://doenet.org) |
+| **01. Systems of Equations 1** | [Read Notes](01-systems-of-equations-1.pdf) | [Start Preview](https://doenet.org/code/219982) | [Start Exercises](https://doenet.org/code/749542) |
