@@ -13,8 +13,43 @@
 
 \section{Introduction to Matrices}\label{sec:matrices}
 
-In Systems of Equations 1, we learned to solve systems of linear equations using substitution and elimination. In this section, we formalize the elimination method using matrices.
-
-
+In Systems of Equations 1, we learned to solve systems of linear equations using substitution and elimination. In this section, we formalize the elimination method using matrices. Recall that an \(n \times m\) system of equations is a system of \(n\) equations in \(m\) variables:
+\begin{align*}
+a_{11}x_1 + \cdots + a_{1m}x_m &= b_1 \\
+&\vdots \\
+a_{n1}x_1 + \cdots + a_{nm}x_m &= b_n.
+\end{align*}
+Note that the variables \(x_1, \ldots, x_m\), the plus signs, and the equal signs are the same in each each system of equations, so what distinguishes one system of equations from another is the coefficients \(a_{ij}\) and the constants \(b_i\). We can represent the coefficients and constants in rectangular arrays called \textbf{matrices} (singular, \textbf{matrix}). The coefficients are represented in an \(n \times m\) matrix and the constants are represented in an \(n \times 1\) matrix:
+\[\begin{bmatrix}
+a_{11} & \cdots & a_{1m} \\
+\vdots & \ddots & \vdots \\
+a_{n1} & \cdots & a_{nm}
+\end{bmatrix} \quad \text{and} \quad \begin{bmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{bmatrix}.\]
+Thus, for example, the system of equations
+\begin{align*}
+2x + 3y - z &= 5 \\
+-x + 4y + 2z &= -3 \\
+3x - y + z &= 2
+\end{align*}
+can be represented by the matrices
+\[\begin{bmatrix}
+2 & 3 & -1 \\
+-1 & 4 & 2 \\
+3 & -1 & 1
+\end{bmatrix} \quad \text{and} \quad \begin{bmatrix}
+5 \\
+-3 \\
+2
+\end{bmatrix}.\]
+Putting the coefficients and constants together, we can represent the system of equations as an augmented matrix:
+\[\begin{bmatrix}
+2 & 3 & -1 & | & 5 \\
+-1 & 4 & 2 & | & -3 \\
+3 & -1 & 1 & | & 2
+\end{bmatrix}.\]
 
 \end{document}

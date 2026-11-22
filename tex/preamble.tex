@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{xurl}
+\usepackage{colortbl}
 \usepackage{hyperref} % Load this last in your preamble
 \hypersetup{
     colorlinks=true,
@@ -64,3 +65,11 @@
 \renewcommand{\thecalloutbox}{\arabic{calloutbox}}
 \crefname{calloutbox}{box}{boxes}
 \Crefname{calloutbox}{Box}{Boxes}
+
+% Augmented matrix with a continuous light-gray vertical bar
+% Usage: \begin{augmatrix}{ccc} ... \end{augmatrix} (specify coefficient columns only)
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{@{}#1!{\color{gray!60}\vrule}c@{}}%
+}{%
+  \end{array}\right]%
+}
