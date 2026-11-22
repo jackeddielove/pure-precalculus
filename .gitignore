@@ -7,6 +7,8 @@
 *.synctex.gz
 *.toc
 *.pdf
+!docs/*.pdf
+
 
 # macOS system files
 .DS_Store
