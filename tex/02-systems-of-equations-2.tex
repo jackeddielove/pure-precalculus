@@ -132,7 +132,7 @@ Notice that each step in the elimination method above corresponds to one of thre
 \begin{calloutbox}
 \textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations. To record each step, we write the operation that produces a new row directly beside that row:
 \begin{enumerate}
-    \item \textbf{Row Swap:} Interchange two rows (\(R_i \leftrightarrow R_j\), written beside both swapped rows).
+    \item \textbf{Row Swap:} Interchange two rows (\(R_i\) written beside the new \(R_j\), and \(R_j\) written beside the new \(R_i\), ).
     \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (written \(cR_i\) beside the new row \(i\)).
     \item \textbf{Row Replacement:} Add a multiple of one row to another row (written \(R_i + cR_j\) beside the new row \(i\)).
 \end{enumerate}
@@ -150,7 +150,6 @@ Use row operations to solve the following system of equations:
 3x - y + z &= 6.
 \end{align*}
 
-Using this notation, we can write the entire elimination process for our earlier \(3 \times 3\) system compactly as a sequence of row-equivalent augmented matrices:
 \begin{align*}
 \begin{augmatrix}{rrr}
 -1 & 4 & 2 & -3 \\
@@ -191,7 +190,7 @@ R_3 - 3R_1
 R_3 - R_2
 \end{rowops}
 \end{align*}
-
+The bottom row in the last augmented matrix tells us that \(4z=-8\) and thus \(z=-2\). Substituting \(z=-2\) into the second row, \(11y+3z=5\), we have \(11y-6=5\) and thus \(y=1\). Substituting \(y=1\) and \(z=-2\) into the first row, \(x-4y-2z=3\) we have \(x-4+4=3\) and thus \(x=3\). We have arived at the unique solution to the system:  \((3, 1, -2)\).
 
 \end{example}
 
