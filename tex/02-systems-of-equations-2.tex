@@ -132,7 +132,7 @@ Notice that each step in the elimination method above corresponds to one of thre
 \begin{calloutbox}
 \textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations. To record each step, we write the operation that produces a new row directly beside that row:
 \begin{enumerate}
-    \item \textbf{Row Swap:} Interchange two rows (\(R_i\) written beside the new \(R_j\), and \(R_j\) written beside the new \(R_i\), ).
+    \item \textbf{Row Swap:} Interchange two rows (\(R_i\) written beside the new \(R_j\), and \(R_j\) written beside the new \(R_i\)).
     \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (written \(cR_i\) beside the new row \(i\)).
     \item \textbf{Row Replacement:} Add a multiple of one row to another row (written \(R_i + cR_j\) beside the new row \(i\)).
 \end{enumerate}
@@ -190,9 +190,121 @@ R_3 - 3R_1
 R_3 - R_2
 \end{rowops}
 \end{align*}
-The bottom row in the last augmented matrix tells us that \(4z=-8\) and thus \(z=-2\). Substituting \(z=-2\) into the second row, \(11y+3z=5\), we have \(11y-6=5\) and thus \(y=1\). Substituting \(y=1\) and \(z=-2\) into the first row, \(x-4y-2z=3\) we have \(x-4+4=3\) and thus \(x=3\). We have arived at the unique solution to the system:  \((3, 1, -2)\).
+The bottom row in the last augmented matrix tells us that \(4z=-8\) and thus \(z=-2\). Substituting \(z=-2\) into the second row, \(11y+3z=5\), we have \(11y-6=5\) and thus \(y=1\). Substituting \(y=1\) and \(z=-2\) into the first row, \(x-4y-2z=3\) we have \(x-4+4=3\) and thus \(x=3\). We have arrived at the unique solution to the system:  \((3, 1, -2)\).
 
 \end{example}
+
+\section{Reduced Row Echelon Form}\label{sec:RREF}
+
+In this section, we complete the process of applying row operations to augmented matrices to find solutions of systems of linear equations. Recall \cref{ex:row-operations}, where we reduced the augmented matrix of a \(3\times 3\) system to
+\[
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+0 & 11 & 3 & 5 \\
+0 & 0 & 4 & -8
+\end{augmatrix}.
+\]
+At that point, we paused our row operations and used back-substitution to solve for \(z\), \(y\), and \(x\). However, we can instead continue applying elementary row operations until the augmented matrix is simplified so completely that the solution can be read directly from the final column. The target form of this process is called \textbf{reduced row echelon form}.
+
+\begin{calloutbox}
+\textbf{Row Echelon Form and Reduced Row Echelon Form} A matrix is in \textbf{row echelon form (REF)} if it satisfies the following three conditions:
+\begin{enumerate}
+    \item All rows consisting entirely of zeros are at the bottom of the matrix.
+    \item The first nonzero entry from the left in any nonzero row, called a \textbf{leading entry} (or \textbf{pivot}), is \(1\).
+    \item Each leading \(1\) is strictly to the right of the leading \(1\) in the row above it.
+\end{enumerate}
+A matrix is in \textbf{reduced row echelon form (RREF)} if it is in row echelon form and satisfies one additional condition:
+\begin{enumerate}\setcounter{enumi}{3}
+    \item Each leading \(1\) is the only nonzero entry in its column (all entries above and below each leading \(1\) are \(0\)).
+\end{enumerate}
+\end{calloutbox}
+
+\begin{example}\label{ex:rref-check}
+Determine whether each matrix is in row echelon form (REF), reduced row echelon form (RREF), or neither.
+\[
+A = \begin{bmatrix*}[r]
+1 & -4 & -2 & 3 \\
+0 & 1 & 3 & 5 \\
+0 & 0 & 1 & -2
+\end{bmatrix*}, \qquad
+B = \begin{bmatrix*}[r]
+1 & 0 & 0 & 3 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -2
+\end{bmatrix*}, \qquad
+C = \begin{bmatrix*}[r]
+1 & 2 & 0 & 4 \\
+0 & 0 & 1 & -1 \\
+0 & 1 & 0 & 3
+\end{bmatrix*}
+\]
+\begin{itemize}
+    \item Matrix \(A\) is in \textbf{REF}, because each nonzero row starts with a leading \(1\) shifted to the right of the leading \(1\) above it. It is not in RREF because the entries above the leading \(1\)'s in columns \(2\) and \(3\) are nonzero.
+    \item Matrix \(B\) is in \textbf{RREF} (and therefore also in REF), because every leading \(1\) has zeros both above and below it.
+    \item Matrix \(C\) is in \textbf{neither} form, because the leading \(1\) in row \(3\) is to the left of the leading \(1\) in row \(2\) (violating condition 3).
+\end{itemize}
+\end{example}
+
+When we reduce an augmented matrix to RREF—a procedure known as \textbf{Gauss--Jordan elimination}—we typically work in two phases:
+\begin{enumerate}
+    \item \textbf{Forward phase (to REF):} Work from top to bottom and left to right to create leading \(1\)'s and zeros \emph{below} each leading \(1\).
+    \item \textbf{Backward phase (to RREF):} Work from bottom to top to create zeros \emph{above} each leading \(1\).
+\end{enumerate}
+
+\begin{example}\label{ex:gauss-jordan}
+Continue the row operations from \cref{ex:row-operations} to put the augmented matrix into reduced row echelon form, and read off the solution to the system.
+
+Starting from the final augmented matrix in \cref{ex:row-operations}, we first scale rows \(2\) and \(3\) so that their leading entries are \(1\) (reaching REF), and then clear the entries above the leading \(1\)'s from bottom to top:
+\begin{align*}
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+0 & 11 & 3 & 5 \\
+0 & 0 & 4 & -8
+\end{augmatrix}
+&\sim
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+0 & 1 & \frac{3}{11} & \frac{5}{11} \\
+0 & 0 & 1 & -2
+\end{augmatrix}
+\begin{rowops}
+\vphantom{0} \\
+\frac{1}{11}R_2 \\
+\frac{1}{4}R_3
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & -4 & 0 & -1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -2
+\end{augmatrix}
+\begin{rowops}
+R_1 + 2R_3 \\
+R_2 - \frac{3}{11}R_3 \\
+\vphantom{0}
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & 0 & 0 & 3 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -2
+\end{augmatrix}
+\begin{rowops}
+R_1 + 4R_2 \\
+\vphantom{0} \\
+\vphantom{0}
+\end{rowops}
+\end{align*}
+Rewriting this RREF augmented matrix as a system of equations gives
+\begin{align*}
+x &= 3 \\
+y &= 1 \\
+z &= -2,
+\end{align*}
+so the unique solution is \((3, 1, -2)\), matching our result from \cref{ex:row-operations}.
+\end{example}
+
+
 
 
 \end{document}
