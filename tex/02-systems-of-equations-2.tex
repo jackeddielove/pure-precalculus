@@ -60,68 +60,69 @@ Putting the coefficients and constants together, we can represent the system of 
 Consider the \(3\times 3\) system of equations
 \begin{align*}
 -x + 4y + 2z &= -3 \\
-2x + 3y - z &= 5 \\
-3x - y + z &= 2
+2x + 3y - z &= 11 \\
+3x - y + z &= 6
 \end{align*}
 which is represented by the augmented matrix
 \[
 \begin{augmatrix}{ccc}
 -1 & 4 & 2 & -3 \\
-2 & 3 & -1 & 5 \\
-3 & -1 & 1 & 2
+2 & 3 & -1 & 11 \\
+3 & -1 & 1 & 6
 \end{augmatrix}.
 \]
 Using the elimination method from Systems of Equations 1, we might first multiply the first equation by \(-1\) so that the leading coefficient of \(x\) is \(1\):
 \begin{align*}
 x - 4y - 2z &= 3 \\
-2x + 3y - z &= 5 \\
-3x - y + z &= 2.
+2x + 3y - z &= 11 \\
+3x - y + z &= 6.
 \end{align*}
 In matrix form, this corresponds to multiplying every entry in the first row by \(-1\):
 \[
 \begin{augmatrix}{ccc}
 1 & -4 & -2 & 3 \\
-2 & 3 & -1 & 5 \\
-3 & -1 & 1 & 2
+2 & 3 & -1 & 11 \\
+3 & -1 & 1 & 6
 \end{augmatrix}.
 \]
 Next, we eliminate \(x\) from the second and third equations by subtracting \(2\) times the first equation from the second, and subtracting \(3\) times the first equation from the third:
 \begin{align*}
 x - 4y - 2z &= 3 \\
-11y + 3z &= -1 \\
-11y + 7z &= -7.
+11y + 3z &= 5 \\
+11y + 7z &= -3.
 \end{align*}
 Performing the corresponding operations on the rows of our augmented matrix yields
 \[
 \begin{augmatrix}{ccc}
 1 & -4 & -2 & 3 \\
-0 & 11 & 3 & -1 \\
-0 & 11 & 7 & -7
+0 & 11 & 3 & 5 \\
+0 & 11 & 7 & -3
 \end{augmatrix}.
 \]
 To eliminate \(y\) from the third equation, we subtract the second equation from the third:
 \begin{align*}
 x - 4y - 2z &= 3 \\
-11y + 3z &= -1 \\
-4z &= -6.
+11y + 3z &= 5 \\
+4z &= -8.
 \end{align*}
 In the augmented matrix, subtracting the second row from the third row produces
 \[
 \begin{augmatrix}{ccc}
 1 & -4 & -2 & 3 \\
-0 & 11 & 3 & -1 \\
-0 & 0 & 4 & -6
+0 & 11 & 3 & 5 \\
+0 & 0 & 4 & -8
 \end{augmatrix}.
 \]
-From the last row, we have \(4z = -6\), so \(z = -\frac{3}{2}\). Substituting \(z = -\frac{3}{2}\) back into the second equation gives
+From the last row, we have \(4z = -8\), so \(z = -2\). Substituting \(z = -2\) back into the second equation gives
 \[
-11y + 3\left(-\frac{3}{2}\right) = -1 \implies 11y = \frac{7}{2} \implies y = \frac{7}{22},
+11y + 3(-2) = 5 \implies 11y = 11 \implies y = 1,
 \]
 and substituting both values into the first equation yields
 \[
-x - 4\left(\frac{7}{22}\right) - 2\left(-\frac{3}{2}\right) = 3 \implies x = \frac{14}{11}.
+x - 4(1) - 2(-2) = 3 \implies x = 3.
 \]
-Thus, the system has the unique solution \(\left(\frac{14}{11}, \frac{7}{22}, -\frac{3}{2}\right)\).
+Thus, the system has the unique solution \((3, 1, -2)\).
+
 
 
 \end{document}
