@@ -65,7 +65,7 @@ Consider the \(3\times 3\) system of equations
 \end{align*}
 which is represented by the augmented matrix
 \[
-\begin{augmatrix}{ccc}
+\begin{augmatrix}{rrr}
 -1 & 4 & 2 & -3 \\
 2 & 3 & -1 & 11 \\
 3 & -1 & 1 & 6
@@ -79,7 +79,7 @@ x - 4y - 2z &= 3 \\
 \end{align*}
 In matrix form, this corresponds to multiplying every entry in the first row by \(-1\):
 \[
-\begin{augmatrix}{ccc}
+\begin{augmatrix}{rrr}
 1 & -4 & -2 & 3 \\
 2 & 3 & -1 & 11 \\
 3 & -1 & 1 & 6
@@ -93,7 +93,7 @@ x - 4y - 2z &= 3 \\
 \end{align*}
 Performing the corresponding operations on the rows of our augmented matrix yields
 \[
-\begin{augmatrix}{ccc}
+\begin{augmatrix}{rrr}
 1 & -4 & -2 & 3 \\
 0 & 11 & 3 & 5 \\
 0 & 11 & 7 & -3
@@ -107,7 +107,7 @@ x - 4y - 2z &= 3 \\
 \end{align*}
 In the augmented matrix, subtracting the second row from the third row produces
 \[
-\begin{augmatrix}{ccc}
+\begin{augmatrix}{rrr}
 1 & -4 & -2 & 3 \\
 0 & 11 & 3 & 5 \\
 0 & 0 & 4 & -8
@@ -123,6 +123,16 @@ x - 4(1) - 2(-2) = 3 \implies x = 3.
 \]
 Thus, the system has the unique solution \((3, 1, -2)\).
 
+Notice that each step in the elimination method above corresponds to one of three basic manipulations on the rows of the augmented matrix, none of which changes the solution set of the underlying system.
+
+\begin{calloutbox}
+\textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations:
+\begin{enumerate}
+    \item \textbf{Row Swap:} Interchange two rows (\(R_i \leftrightarrow R_j\)).
+    \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (\(cR_i \to R_i\)).
+    \item \textbf{Row Replacement:} Add a multiple of one row to another row (\(R_i + cR_j \to R_i\)).
+\end{enumerate}
+\end{calloutbox}
 
 
 \end{document}
