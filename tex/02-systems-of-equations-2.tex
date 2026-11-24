@@ -226,12 +226,12 @@ A = \begin{bmatrix*}[r]
 1 & -4 & -2 & 3 \\
 0 & 1 & 3 & 5 \\
 0 & 0 & 1 & -2
-\end{bmatrix*}, \qquad
+\end{bmatrix*}, \quad
 B = \begin{bmatrix*}[r]
 1 & 0 & 0 & 3 \\
 0 & 1 & 0 & 1 \\
 0 & 0 & 1 & -2
-\end{bmatrix*}, \qquad
+\end{bmatrix*}, \quad
 C = \begin{bmatrix*}[r]
 1 & 2 & 0 & 4 \\
 0 & 0 & 1 & -1 \\
@@ -304,7 +304,109 @@ z &= -2,
 so the unique solution is \((3, 1, -2)\), matching our result from \cref{ex:row-operations}.
 \end{example}
 
+\section{How RREF Reveals Solution Sets}\label{sec:RREF-solution-sets}
 
+In \cref{ex:gauss-jordan}, reducing the augmented matrix to RREF produced a leading \(1\) in every variable column, giving a unique solution. However, as we saw in Systems of Equations 1, a linear system can also have no solution or infinitely many solutions. Once an augmented matrix is in reduced row echelon form, we can immediately tell which of these three cases occurs.
+
+\begin{calloutbox}
+\textbf{Determining the Number of Solutions from RREF} Suppose the augmented matrix of a system of linear equations has been reduced to RREF.
+\begin{enumerate}
+    \item \textbf{No Solution (Inconsistent):} If the RREF matrix contains a row of the form
+    \[
+    \begin{augmatrix}{rrrr} 0 & 0 & \cdots & 0 & 1 \end{augmatrix}
+    \]
+    (all zeros to the left of the bar and a leading \(1\) on the right), the corresponding equation is \(0 = 1\), which is false. The system has \textbf{no solution}.
+    \item \textbf{Unique Solution (Consistent):} If there is no contradictory row \(0 = 1\) and \emph{every} variable column contains a leading \(1\), then each variable is fixed to a single value, and the system has a \textbf{unique solution}.
+    \item \textbf{Infinitely Many Solutions (Consistent):} If there is no contradictory row \(0 = 1\) and \emph{at least one} variable column does not contain a leading \(1\), then at least one variable is free to take any real value. The system has \textbf{infinitely many solutions}.
+\end{enumerate}
+\end{calloutbox}
+
+\begin{example}\label{ex:rref-inconsistent}
+Determine whether the system of equations has a unique solution, no solution, or infinitely many solutions:
+\begin{align*}
+x - 2y + 3z &= 4 \\
+2x - 3y + 5z &= 7 \\
+3x - 5y + 8z &= 12.
+\end{align*}
+
+We form the augmented matrix and apply elementary row operations to reduce it to RREF:
+\begin{align*}
+\begin{augmatrix}{rrr}
+1 & -2 & 3 & 4 \\
+2 & -3 & 5 & 7 \\
+3 & -5 & 8 & 12
+\end{augmatrix}
+&\sim
+\begin{augmatrix}{rrr}
+1 & -2 & 3 & 4 \\
+0 & 1 & -1 & -1 \\
+0 & 1 & -1 & 0
+\end{augmatrix}
+\begin{rowops}
+\vphantom{0} \\
+R_2 - 2R_1 \\
+R_3 - 3R_1
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & 0 & 1 & 2 \\
+0 & 1 & -1 & -1 \\
+0 & 0 & 0 & 1
+\end{augmatrix}
+\begin{rowops}
+R_1 + 2R_2 \\
+\vphantom{0} \\
+R_3 - R_2
+\end{rowops}
+\end{align*}
+The matrix is now in RREF. Because the third row represents the false equation \(0 = 1\), the system is inconsistent and has \textbf{no solution}.
+\end{example}
+
+\begin{example}\label{ex:rref-infinite}
+Determine whether the system of equations has a unique solution, no solution, or infinitely many solutions:
+\begin{align*}
+x + 2y - z &= 3 \\
+2x + 5y + z &= 8 \\
+-x - y + 4z &= -1.
+\end{align*}
+
+We form the augmented matrix and apply elementary row operations to put it into RREF:
+\begin{align*}
+\begin{augmatrix}{rrr}
+1 & 2 & -1 & 3 \\
+2 & 5 & 1 & 8 \\
+-1 & -1 & 4 & -1
+\end{augmatrix}
+&\sim
+\begin{augmatrix}{rrr}
+1 & 2 & -1 & 3 \\
+0 & 1 & 3 & 2 \\
+0 & 1 & 3 & 2
+\end{augmatrix}
+\begin{rowops}
+\vphantom{0} \\
+R_2 - 2R_1 \\
+R_3 + R_1
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & 0 & -7 & -1 \\
+0 & 1 & 3 & 2 \\
+0 & 0 & 0 & 0
+\end{augmatrix}
+\begin{rowops}
+R_1 - 2R_2 \\
+\vphantom{0} \\
+R_3 - R_2
+\end{rowops}
+\end{align*}
+This matrix is in RREF. There is no contradictory row \(0 = 1\), and columns \(1\) and \(2\) contain leading \(1\)'s, while column \(3\) (corresponding to \(z\)) does not. Rewriting the first two rows as equations gives
+\begin{align*}
+x - 7z &= -1 \\
+y + 3z &= 2,
+\end{align*}
+so \(z\) can be chosen to be any real number, and \(x\) and \(y\) are determined accordingly. Therefore, the system is consistent with \textbf{infinitely many solutions}.
+\end{example}
 
 
 \end{document}

@@ -1,0 +1,146 @@
+<!-- Problem 1: Performing an Elementary Row Operation -->
+<problem>
+  <p>Apply the elementary row operation <m>R_3 + 2R_2</m> to the augmented matrix <m>\left[\begin{array}{rrr|r} 1 & 4 & -1 & 2 \\ 0 & 1 & -3 & 5 \\ 0 & -2 & 7 & -6 \end{array}\right]</m>. Use the r+/-, c+/- buttons to change the number of rows and columns.</p>
+  <answer name="rowOpAns1">
+    <matrixInput name="rowOpMat1" numRows="1" numColumns="1"/>
+    <award>
+      <matrix>
+        <row>1 4 -1 2</row>
+        <row>0 1 -3 5</row>
+        <row>0 0 1 4</row>
+      </matrix>
+    </award>
+  </answer>
+</problem>
+
+<!-- Problem 2: Identifying RREF -->
+<problem>
+  <p>Which of the following matrices are in <alert>reduced row echelon form (RREF)</alert>?</p>
+  <answer name="rrefCheck1" selectMultiple>
+    <label>Select all that apply.</label>
+    <choice credit="1"><m>\left[\begin{array}{rrrr} 1 & 0 & 0 & 5 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 4 \end{array}\right]</m></choice>
+    <choice><m>\left[\begin{array}{rrrr} 1 & 3 & 0 & 5 \\ 0 & 1 & 0 & -2 \\ 0 & 0 & 1 & 4 \end{array}\right]</m></choice>
+    <choice credit="1"><m>\left[\begin{array}{rrrr} 1 & 0 & -4 & 2 \\ 0 & 1 & 3 & -1 \\ 0 & 0 & 0 & 0 \end{array}\right]</m></choice>
+    <choice><m>\left[\begin{array}{rrrr} 1 & 0 & 0 & 2 \\ 0 & 0 & 1 & 3 \\ 0 & 1 & 0 & -1 \end{array}\right]</m></choice>
+  </answer>
+</problem>
+
+<!-- Problem 3: Reading Solution Sets from RREF Augmented Matrices -->
+<problem>
+  <p>Each augmented matrix below is already in <alert>reduced row echelon form (RREF)</alert> for a system in the variables <m>x, y, z</m>. Determine whether the system is inconsistent, consistent with infinitely many solutions, or consistent with a unique solution.</p>
+
+  <part>
+    <p><m>\left[\begin{array}{rrr|r} 1 & 0 & 2 & 5 \\ 0 & 1 & -3 & -1 \\ 0 & 0 & 0 & 0 \end{array}\right]</m></p>
+    <choiceInput name="rrefChoice1">
+      <choice name="rc1_inc">Inconsistent</choice>
+      <choice name="rc1_inf">Consistent with infinitely many solutions</choice>
+      <choice name="rc1_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <group hide="not $rc1_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="rx1"/>, <m>y = </m><mathInput name="ry1"/>, <m>z = </m><mathInput name="rz1"/></p>
+    </group>
+    <answer name="rrefAns1">
+      <award><when>$rc1_inf.selected</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p><m>\left[\begin{array}{rrr|r} 1 & 0 & 0 & -4 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & 7 \end{array}\right]</m></p>
+    <choiceInput name="rrefChoice2">
+      <choice name="rc2_inc">Inconsistent</choice>
+      <choice name="rc2_inf">Consistent with infinitely many solutions</choice>
+      <choice name="rc2_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <group hide="not $rc2_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="rx2"/>, <m>y = </m><mathInput name="ry2"/>, <m>z = </m><mathInput name="rz2"/></p>
+    </group>
+    <answer name="rrefAns2">
+      <award><when>$rc2_uni.selected and $rx2 = -4 and $ry2 = 2 and $rz2 = 7</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p><m>\left[\begin{array}{rrr|r} 1 & 0 & -1 & 3 \\ 0 & 1 & 4 & 0 \\ 0 & 0 & 0 & 1 \end{array}\right]</m></p>
+    <choiceInput name="rrefChoice3">
+      <choice name="rc3_inc">Inconsistent</choice>
+      <choice name="rc3_inf">Consistent with infinitely many solutions</choice>
+      <choice name="rc3_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <group hide="not $rc3_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="rx3"/>, <m>y = </m><mathInput name="ry3"/>, <m>z = </m><mathInput name="rz3"/></p>
+    </group>
+    <answer name="rrefAns3">
+      <award><when>$rc3_inc.selected</when></award>
+    </answer>
+  </part>
+</problem>
+
+<!-- Problem 4: Reducing 3x3 Systems to RREF and Classifying -->
+<problem>
+  <p>For each system below, form the augmented matrix and reduce it to <alert>RREF</alert>. Enter the resulting RREF augmented matrix (use the r+/-, c+/- buttons to change the number of rows and columns), then classify the system. If the system has a unique solution, enter the values of <m>x, y,</m> and <m>z</m>.</p>
+
+  <part>
+    <p>
+      <m>x - 3y + 2z = 5</m><br/>
+      <m>2x - 5y + 3z = 8</m><br/>
+      <m>-x + 4y - 3z = -6</m>
+    </p>
+    <p>RREF augmented matrix:</p>
+    <answer name="sysMatAns1">
+      <matrixInput name="sysMat1" numRows="1" numColumns="1"/>
+      <award>
+        <matrix>
+          <row>1 0 -1 -1</row>
+          <row>0 1 -1 -2</row>
+          <row>0 0 0 1</row>
+        </matrix>
+      </award>
+    </answer>
+    <choiceInput name="sysChoice1">
+      <choice name="sc1_inc">Inconsistent</choice>
+      <choice name="sc1_inf">Consistent with infinitely many solutions</choice>
+      <choice name="sc1_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <group hide="not $sc1_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="sx1"/>, <m>y = </m><mathInput name="sy1"/>, <m>z = </m><mathInput name="sz1"/></p>
+    </group>
+    <answer name="sysAns1">
+      <award><when>$sc1_inc.selected</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p>
+      <m>x + 3y - z = 2</m><br/>
+      <m>2x + 7y + z = 6</m><br/>
+      <m>x + 4y + 2z = 4</m>
+    </p>
+    <p>RREF augmented matrix:</p>
+    <answer name="sysMatAns2">
+      <matrixInput name="sysMat2" numRows="1" numColumns="1"/>
+      <award>
+        <matrix>
+          <row>1 0 -10 -4</row>
+          <row>0 1 3 2</row>
+          <row>0 0 0 0</row>
+        </matrix>
+      </award>
+    </answer>
+    <choiceInput name="sysChoice2">
+      <choice name="sc2_inc">Inconsistent</choice>
+      <choice name="sc2_inf">Consistent with infinitely many solutions</choice>
+      <choice name="sc2_uni">Consistent with a unique solution</choice>
+    </choiceInput>
+    <group hide="not $sc2_uni.selected">
+      <p>Enter the unique solution:</p>
+      <p><m>x = </m><mathInput name="sx2"/>, <m>y = </m><mathInput name="sy2"/>, <m>z = </m><mathInput name="sz2"/></p>
+    </group>
+    <answer name="sysAns2">
+      <award><when>$sc2_inf.selected</when></award>
+    </answer>
+  </part>
+</problem>
