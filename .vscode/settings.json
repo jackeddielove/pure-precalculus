@@ -1,5 +1,5 @@
 {
-  "latex-workshop.latex.outDir": "%DIR%/../docs",
+  "latex-workshop.latex.outDir": "%DIR%/../build",
   "files.exclude": {
     "**/*.aux": true,
     "**/*.fdb_latexmk": true,

@@ -1,4 +1,5 @@
 # LaTeX temporary build files
+build/
 *.aux
 *.fdb_latexmk
 *.fls
@@ -8,7 +9,6 @@
 *.toc
 *.pdf
 !docs/*.pdf
-
 
 # macOS system files
 .DS_Store
