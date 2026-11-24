@@ -57,6 +57,9 @@ Putting the coefficients and constants together, we can represent the system of 
 
 \section{Using Matrices to Solve Systems of Equations}\label{sec:using-matrices}
 
+Now that we have encoded systems of equations as augmented matrices, we see how the elimination method of solving systems of equations is encoded as operations on those matrices.
+
+\begin{example}\label{ex:elimination-matrix}
 Consider the \(3\times 3\) system of equations
 \begin{align*}
 -x + 4y + 2z &= -3 \\
@@ -122,17 +125,75 @@ and substituting both values into the first equation yields
 x - 4(1) - 2(-2) = 3 \implies x = 3.
 \]
 Thus, the system has the unique solution \((3, 1, -2)\).
+\end{example}
 
 Notice that each step in the elimination method above corresponds to one of three basic manipulations on the rows of the augmented matrix, none of which changes the solution set of the underlying system.
 
 \begin{calloutbox}
-\textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations:
+\textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations. To record each step, we write the operation that produces a new row directly beside that row:
 \begin{enumerate}
-    \item \textbf{Row Swap:} Interchange two rows (\(R_i \leftrightarrow R_j\)).
-    \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (\(cR_i \to R_i\)).
-    \item \textbf{Row Replacement:} Add a multiple of one row to another row (\(R_i + cR_j \to R_i\)).
+    \item \textbf{Row Swap:} Interchange two rows (\(R_i \leftrightarrow R_j\), written beside both swapped rows).
+    \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (written \(cR_i\) beside the new row \(i\)).
+    \item \textbf{Row Replacement:} Add a multiple of one row to another row (written \(R_i + cR_j\) beside the new row \(i\)).
 \end{enumerate}
 \end{calloutbox}
+
+
+
+Using this notation, we can write the entire elimination process from \cref{ex:elimination-matrix} compactly as a sequence of row-equivalent augmented matrices. We do this in the following example.
+
+\begin{example}\label{ex:row-operations}
+Use row operations to solve the following system of equations:
+\begin{align*}
+-x + 4y + 2z &= -3 \\
+2x + 3y - z &= 11 \\
+3x - y + z &= 6.
+\end{align*}
+
+Using this notation, we can write the entire elimination process for our earlier \(3 \times 3\) system compactly as a sequence of row-equivalent augmented matrices:
+\begin{align*}
+\begin{augmatrix}{rrr}
+-1 & 4 & 2 & -3 \\
+2 & 3 & -1 & 11 \\
+3 & -1 & 1 & 6
+\end{augmatrix}
+&\sim
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+2 & 3 & -1 & 11 \\
+3 & -1 & 1 & 6
+\end{augmatrix}
+\begin{rowops}
+-R_1 \\
+\vphantom{0} \\
+\vphantom{0}
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+0 & 11 & 3 & 5 \\
+0 & 11 & 7 & -3
+\end{augmatrix}
+\begin{rowops}
+\vphantom{0} \\
+R_2 - 2R_1 \\
+R_3 - 3R_1
+\end{rowops} \\[8pt]
+&\sim
+\begin{augmatrix}{rrr}
+1 & -4 & -2 & 3 \\
+0 & 11 & 3 & 5 \\
+0 & 0 & 4 & -8
+\end{augmatrix}
+\begin{rowops}
+\vphantom{0} \\
+\vphantom{0} \\
+R_3 - R_2
+\end{rowops}
+\end{align*}
+
+
+\end{example}
 
 
 \end{document}
