@@ -60,13 +60,13 @@ Putting the coefficients and constants together, we can represent the system of 
 Now that we have encoded systems of equations as augmented matrices, we see how the elimination method of solving systems of equations is encoded as operations on those matrices.
 
 \begin{example}\label{ex:elimination-matrix}
-Consider the \(3\times 3\) system of equations
+Solve the following \(3\times 3\) system of equations:
 \begin{align*}
 -x + 4y + 2z &= -3 \\
 2x + 3y - z &= 11 \\
-3x - y + z &= 6
+3x - y + z &= 6.
 \end{align*}
-which is represented by the augmented matrix
+First, we represent the system as an augmented matrix.
 \[
 \begin{augmatrix}{rrr}
 -1 & 4 & 2 & -3 \\
@@ -407,6 +407,109 @@ y + 3z &= 2,
 \end{align*}
 so \(z\) can be chosen to be any real number, and \(x\) and \(y\) are determined accordingly. Therefore, the system is consistent with \textbf{infinitely many solutions}.
 \end{example}
+
+\section{Activities}\label{sec:activities}
+
+%-----------------------------------------------------------------------
+% Activity: Translating Between Systems and Augmented Matrices
+%-----------------------------------------------------------------------
+\begin{activity} Translating Between Systems and Augmented Matrices
+\begin{enumerate}
+  \item Write the augmented matrix corresponding to each system of linear equations (using the variable order \(x, y\) or \(x, y, z\)).
+  \begin{enumerate}
+    \item \(\begin{cases} 4x - y = 7 \\ 3y + 2x = -5 \end{cases}\)
+    \item \(\begin{cases} x - 3z = 6 \\ 2y + z - 4x = 1 \\ 5z = -10 \end{cases}\)
+  \end{enumerate}
+
+  \item Write the system of linear equations corresponding to each augmented matrix.
+  \begin{enumerate}
+    \item \(\begin{augmatrix}{rr}
+      3 & -2 & 8 \\
+      1 & 4 & -1
+    \end{augmatrix}\)
+    \item \(\begin{augmatrix}{rrr}
+      1 & 0 & -5 & 2 \\
+      0 & 2 & 3 & 0 \\
+      -4 & 1 & 0 & 9
+    \end{augmatrix}\)
+  \end{enumerate}
+\end{enumerate}
+\end{activity}
+
+\vspace{6pt}
+%-----------------------------------------------------------------------
+% Activity: Elementary Row Operations
+%-----------------------------------------------------------------------
+\begin{activity} Elementary Row Operations
+
+Perform the indicated sequence of elementary row operations on the given augmented matrix, writing the resulting matrix after each step.
+\[
+\begin{augmatrix}{rrr}
+  1 & -2 & 3 & 9 \\
+  -1 & 3 & 0 & -4 \\
+  2 & -5 & 5 & 17
+\end{augmatrix}
+\]
+\begin{enumerate}
+  \item Apply \(R_2 + R_1\) and \(R_3 - 2R_1\).
+  \item Next, apply \(R_3 + R_2\) to your result from the first step.
+  \item Finally, apply \(\frac{1}{2}R_3\) to your result from the second step.
+\end{enumerate}
+\end{activity}
+
+\vspace{6pt}
+%-----------------------------------------------------------------------
+% Activity: Identifying REF and RREF
+%-----------------------------------------------------------------------
+\begin{activity} Identifying Row Echelon Form (REF) and RREF
+
+For each matrix below, determine whether it is in \textbf{Reduced Row Echelon Form (RREF)}, \textbf{Row Echelon Form (REF) only}, or \textbf{Neither}. If it is not in RREF, state the single row operation (such as \(R_1 \leftrightarrow R_2\), \(\frac{1}{3}R_2\), or \(R_1 - 2R_2\)) needed to put it into RREF.
+\begin{enumerate}
+  \item \(\begin{augmatrix}{rrr}
+    1 & 0 & 4 & -2 \\
+    0 & 1 & -1 & 5 \\
+    0 & 0 & 0 & 0
+  \end{augmatrix}\)
+  \item \(\begin{augmatrix}{rrr}
+    1 & 3 & 0 & 7 \\
+    0 & 1 & 0 & 2 \\
+    0 & 0 & 1 & -4
+  \end{augmatrix}\)
+  \item \(\begin{augmatrix}{rrr}
+    1 & 0 & 0 & 3 \\
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & -1
+  \end{augmatrix}\)
+  \item \(\begin{augmatrix}{rrr}
+    1 & 0 & 2 & 6 \\
+    0 & 3 & -9 & 12 \\
+    0 & 0 & 0 & 0
+  \end{augmatrix}\)
+\end{enumerate}
+\end{activity}
+
+\vspace{6pt}
+%-----------------------------------------------------------------------
+% Activity: Solving and Classifying Linear Systems via Gauss-Jordan
+%-----------------------------------------------------------------------
+\begin{activity} Solving and Classifying Linear Systems via Gauss-Jordan Elimination
+
+For each system below:
+\begin{itemize}
+  \item Write the augmented matrix.
+  \item Use Gauss-Jordan elimination to reduce the matrix to RREF.
+  \item Classify the system as \textbf{Inconsistent}, \textbf{Consistent with infinitely many solutions}, or \textbf{Consistent with a unique solution}. If there is a unique solution, state the values of the variables.
+\end{itemize}
+\begin{enumerate}
+  \item \(\begin{cases} x + 2y - z = 3 \\ 2x + 5y + z = 11 \\ -x + y + 4z = 2 \end{cases}\)
+  \item \(\begin{cases} x - 2y + 3z = 4 \\ 2x - 3y + 5z = 7 \\ 3x - 5y + 8z = 12 \end{cases}\)
+  \item \(\begin{cases} x + y - 2z = 5 \\ 2x + 3y - z = 13 \\ 3x + 4y - 3z = 18 \end{cases}\)
+\end{enumerate}
+\end{activity}
+
+\section{Exercises}\label{sec:exercises}
+
+\doenetlink{Systems of Equations 1 Exercises}{https://doenet.org/code/697481}
 
 
 \end{document}
