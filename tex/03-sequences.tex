@@ -12,18 +12,54 @@
 
 \section{Introduction to Sequences}\label{sec:sequences-intro}
 
-% Define a sequence as a function whose domain is the positive integers (or non-negative integers).
+We begin with a definition.
+
+\begin{definition}\label{def:sequence}
+A \textbf{sequence} is an infinite ordered list of numbers
+\[(a_1, a_2, a_3, \ldots).\]
+The numbers \(a_n\) are called the \textbf{terms} of the sequence, and the index \(n\) indicates the position of the term in the sequence. The sequence itself is denoted by \((a_n)_{n=1}^\infty\).
+\end{definition}
+
+\begin{example}\label{ex:sequence-example}
+Here are three examples:
+\begin{itemize}
+    \item The sequence of positive even integers is
+    \((2, 4, 6, 8, 10, \ldots)\). Its first terms are
+    \(a_1 = 2\), \(a_2 = 4\), \(a_3 = 6\), and so on. Its \(n\)th term is \(2n\), so we can write the sequence as \((2n)_{n=1}^\infty\).
+    \item The sequence of squares of positive integers is
+    \((1, 4, 9, 16, 25, \ldots)\). Its first terms are
+    \(a_1 = 1\), \(a_2 = 4\), \(a_3 = 9\), and so on. Its \(n\)th term is \(n^2\), so we can write the sequence as \((n^2)_{n=1}^\infty\).
+    \item The sequence of alternating signs is
+    \((1, -1, 1, -1, 1, \ldots)\). Its first terms are
+    \(a_1 = 1\), \(a_2 = -1\), \(a_3 = 1\), and so on. Its \(n\)th term is \((-1)^{n+1}\), so we can write the sequence as \(((-1)^{n+1})_{n=1}^\infty\).
+\end{itemize}
+\end{example}
+
+A note on indexing: We need not always start with \(n=1\). For example, we could define a sequence starting with \(n=0\) or any other integer. The choice of starting index depends on the context and the specific sequence being considered. Here are three different sequences, each starting with a different index:
+\begin{itemize}
+    \item \textbf{Starting at \(n=0\):} The non-negative integer powers of 2 form the sequence
+    \begin{align*}
+    (2^n)_{n=0}^\infty &= (2^0, 2^1, 2^2, 2^3, \ldots) \\
+    &= (1, 2, 4, 8, \ldots).
+    \end{align*}
+    \item \textbf{Starting at \(n=1\):} The squares of positive integers form the sequence
+    \begin{align*}
+    (n^2)_{n=1}^\infty &= (1^2, 2^2, 3^2, 4^2, \ldots) \\
+    &= (1, 4, 9, 16, \ldots)
+    \end{align*}
+    \item \textbf{Starting at \(n=3\):} The number of ways to choose 3 objects from \(n\) objects forms the sequence
+    \begin{align*}
+    \left(\frac{n(n-1)(n-2)}{6}\right)_{n=3}^\infty &= \left(\frac{3(3-1)(3-2)}{6}, \frac{4(4-1)(4-2)}{6}, \frac{5(5-1)(5-2)}{6}, \ldots\right) \\
+    &= (1, 4, 10, 20, \ldots).
+    \end{align*}
+\end{itemize}
+
+
 % Introduce notation: a_n, \{a_n\}, terms of a sequence, index n.
 % Calloutbox: Definition of a Sequence.
 % Example: Writing out the first few terms from an explicit formula (including alternating signs (-1)^n and factorials n!).
 % Example: Finding an explicit formula a_n from a list of initial terms.
 % \doenetlink{Sequences Preview Activity}{https://doenet.org/code/...}
-
-\section{Recursive Sequences}\label{sec:recursive-sequences}
-
-% Introduce recursive definitions (initial condition(s) + recurrence relation).
-% Calloutbox: Recursive Definition of a Sequence.
-% Example: Computing terms of a recursively defined sequence (including Fibonacci-type two-term recurrence).
 
 \section{Arithmetic and Geometric Sequences}\label{sec:arith-geom-sequences}
 
