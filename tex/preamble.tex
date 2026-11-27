@@ -61,11 +61,16 @@
     nobreak=true,
     settings={\refstepcounter{calloutbox}},
     frametitle={\textbf{Box \thecalloutbox}}
-]{calloutbox}
+]{calloutframe}
 \newcounter{calloutbox}
 \renewcommand{\thecalloutbox}{\arabic{calloutbox}}
 \crefname{calloutbox}{box}{boxes}
 \Crefname{calloutbox}{Box}{Boxes}
+\newenvironment{calloutbox}[1]{%
+    \begin{calloutframe}\textbf{#1}\space\ignorespaces
+}{%
+    \end{calloutframe}%
+}
 
 % Augmented matrix with a continuous light-gray vertical bar
 % Usage: \begin{augmatrix}{ccc} ... \end{augmatrix} (specify coefficient columns only)

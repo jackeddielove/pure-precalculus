@@ -129,8 +129,8 @@ Thus, the system has the unique solution \((3, 1, -2)\).
 
 Notice that each step in the elimination method above corresponds to one of three basic manipulations on the rows of the augmented matrix, none of which changes the solution set of the underlying system.
 
-\begin{calloutbox}
-\textbf{Elementary Row Operations} Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations. To record each step, we write the operation that produces a new row directly beside that row:
+\begin{calloutbox}{Elementary Row Operations}
+Given an augmented matrix, the following three operations produce an augmented matrix representing an equivalent system of linear equations. To record each step, we write the operation that produces a new row directly beside that row:
 \begin{enumerate}
     \item \textbf{Row Swap:} Interchange two rows (\(R_i\) written beside the new \(R_j\), and \(R_j\) written beside the new \(R_i\)).
     \item \textbf{Row Scaling:} Multiply all entries in a row by a nonzero constant \(c \neq 0\) (written \(cR_i\) beside the new row \(i\)).
@@ -206,8 +206,8 @@ In this section, we complete the process of applying row operations to augmented
 \]
 At that point, we paused our row operations and used back-substitution to solve for \(z\), \(y\), and \(x\). However, we can instead continue applying elementary row operations until the augmented matrix is simplified so completely that the solution can be read directly from the final column. The target form of this process is called \textbf{reduced row echelon form}.
 
-\begin{calloutbox}
-\textbf{Row Echelon Form and Reduced Row Echelon Form} A matrix is in \textbf{row echelon form (REF)} if it satisfies the following three conditions:
+\begin{calloutbox}{Row Echelon Form and Reduced Row Echelon Form}
+A matrix is in \textbf{row echelon form (REF)} if it satisfies the following three conditions:
 \begin{enumerate}
     \item All rows consisting entirely of zeros are at the bottom of the matrix.
     \item The first nonzero entry from the left in any nonzero row, called a \textbf{leading entry} (or \textbf{pivot}), is \(1\).
@@ -308,8 +308,8 @@ so the unique solution is \((3, 1, -2)\), matching our result from \cref{ex:row-
 
 In \cref{ex:gauss-jordan}, reducing the augmented matrix to RREF produced a leading \(1\) in every variable column, giving a unique solution. However, as we saw in Systems of Equations 1, a linear system can also have no solution or infinitely many solutions. Once an augmented matrix is in reduced row echelon form, we can immediately tell which of these three cases occurs.
 
-\begin{calloutbox}
-\textbf{Determining the Number of Solutions from RREF} Suppose the augmented matrix of a system of linear equations has been reduced to RREF.
+\begin{calloutbox}{Determining the Number of Solutions from RREF}
+Suppose the augmented matrix of a system of linear equations has been reduced to RREF.
 \begin{enumerate}
     \item \textbf{No Solution (Inconsistent):} If the RREF matrix contains a row of the form
     \[

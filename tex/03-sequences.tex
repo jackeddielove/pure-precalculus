@@ -49,29 +49,58 @@ A note on indexing: We need not always start with \(n=1\). For example, we could
     \end{align*}
     \item \textbf{Starting at \(n=3\):} The number of ways to choose 3 objects from \(n\) objects forms the sequence
     \begin{align*}
-    \left(\frac{n(n-1)(n-2)}{6}\right)_{n=3}^\infty &= \left(\frac{3(3-1)(3-2)}{6}, \frac{4(4-1)(4-2)}{6}, \frac{5(5-1)(5-2)}{6}, \ldots\right) \\
+    \left(\frac{n(n-1)(n-2)}{6}\right)_{n=3}^\infty &= \left(\frac{3(2)(1)}{6}, \frac{4(3)(2)}{6}, \frac{5(4)(3)}{6}, \ldots\right) \\
     &= (1, 4, 10, 20, \ldots).
     \end{align*}
 \end{itemize}
+It is sometimes convenient to suppress the indexing and simply refer to the sequence as \((a_n)\), when stating the starting index is not necessary in context.
 
 \doenetlink{Sequences Preview Activity}{https://doenet.org/code/741334}
 
-% Introduce notation: a_n, \{a_n\}, terms of a sequence, index n.
-% Calloutbox: Definition of a Sequence.
-% Example: Writing out the first few terms from an explicit formula (including alternating signs (-1)^n and factorials n!).
-% Example: Finding an explicit formula a_n from a list of initial terms.
-
 \section{Arithmetic and Geometric Sequences}\label{sec:arith-geom-sequences}
 
-% Calloutbox: Arithmetic Sequences (common difference d, recursive a_n = a_{n-1} + d, explicit a_n = a_1 + (n-1)d).
-% Example: Identifying arithmetic sequences, finding d, and writing explicit/recursive formulas.
-% Calloutbox: Geometric Sequences (common ratio r, recursive a_n = r a_{n-1}, explicit a_n = a_1 r^{n-1}).
-% Example: Identifying geometric sequences, finding r, and writing explicit/recursive formulas.
+Two common types of sequences are arithmetic and geometric sequences. In an arithmetic sequence, every term is obtained by adding a fixed number, called the common difference \(d\), to the previous term. In a geometric sequence, every term is obtained by multiplying the previous term by a fixed number, called the common ratio \(r\).
+
+\begin{definition}\label{def:arithmetic-geometric-sequence}
+A sequence is \textbf{arithmetic} if the difference between consecutive terms is constant. A sequence is \textbf{geometric} if the ratio between consecutive terms is constant.
+\end{definition}
+
+\begin{example}\label{ex:arithmetic-geometric-example}
+Here are two examples:
+\begin{itemize}
+    \item The sequence \((1, 3, 5, 7, 9, \ldots)\) is arithmetic with common difference \(d = 2\).
+    \item The sequence \((2, 6, 18, 54, \ldots)\) is geometric with common ratio \(r = 3\).
+\end{itemize}
+\end{example}
+
+\begin{calloutbox}{Explicit Formulas for Arithmetic and Geometric Sequences} \linebreak
+A sequence \((a_n)\) is arithmetic if it can be written in the form
+\[(a+dn)_{n=0}^\infty = (a, a+d, a+2d, a+3d, \ldots),\]
+where \(a\) is the first term and \(d\) is the common difference. A sequence \((a_n)\) is geometric if it can be written in the form
+\[(ar^n)_{n=0}^\infty = (a, ar, ar^2, ar^3, \ldots),\]
+where \(a\) is the first term and \(r\) is the common ratio.
+\end{calloutbox}
+
+\begin{example}\label{ex:arithmetic-geometric-formulas}
+Here are two examples:
+\begin{itemize}
+    \item The arithmetic sequence \((1, 3, 5, 7, 9, \ldots)\) can be written in explicit form as \((1+2n)_{n=0}^\infty\).
+    \item The geometric sequence \((2, 6, 18, 54, \ldots)\) can be written in explicit form as \((2 \cdot 3^n)_{n=0}^\infty\).
+\end{itemize}
+\end{example}
+
+\section{The Limit of a Sequence}\label{sec:limit-sequence}
+
+% Introduce the concept of the limit of a sequence, including the formal definition.
+% Calloutbox: Definition of the Limit of a Sequence.
+% Example: Finding limits of sequences, including those that converge and diverge.
 
 \section{Sigma Notation and Partial Sums}\label{sec:sigma-notation}
 
 % Introduce summation (sigma) notation \sum_{k=1}^{n} a_k and nth partial sums S_n.
 % Calloutbox: Summation Notation and Properties.
 % Example: Evaluating sums and rewriting sums in sigma notation.
+
+
 
 \end{document}
