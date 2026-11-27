@@ -1,0 +1,48 @@
+<problem>
+  <p>This activity checks the definition of a sequence and how its terms are indexed.</p>
+
+  <part>
+    <p>Which statement best describes a sequence?</p>
+    <answer name="sequenceDefinition">
+      <choice>A finite collection of numbers with no particular order.</choice>
+      <choice credit="1">An infinite ordered list of numbers.</choice>
+      <choice>A rule that must always start with the index 1.</choice>
+      <choice>A list in which every term must be different.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p>Consider the sequence <m>(a_n) = (2n)_{n=1}^\infty</m>. Which statement is correct?</p>
+    <answer name="termAndIndex">
+      <choice><m>a_3 = 3</m>, so the third term is 3.</choice>
+      <choice credit="1"><m>a_3 = 6</m>, so the third term is 6.</choice>
+      <choice><m>a_3 = 6</m>, so the sixth term is 3.</choice>
+      <choice><m>a_1 = 2</m>, so the first term is 1.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p>Let <m>a_n = 2^n</m> for <m>n = 0, 1, 2, \ldots</m>. Select all statements that are true.</p>
+    <answer name="zeroBasedIndexing" selectMultiple>
+      <label>Select all that apply.</label>
+      <choice credit="1">The sequence starts at index 0.</choice>
+      <choice credit="1">The first term is <m>a_0 = 1</m>.</choice>
+      <choice credit="1">The first three terms are <m>(1, 2, 4)</m>.</choice>
+      <choice>The first term is <m>a_1 = 1</m>.</choice>
+      <choice>The value of <m>a_0</m> is 0.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p>
+      Consider <m>c_n = \frac{n(n-1)(n-2)}{6}</m> for <m>n \ge 3</m>.
+      What is the first term of this sequence?
+    </p>
+    <answer name="indexStartingAtThree">
+      <choice>The first term is <m>c_0 = 0</m>.</choice>
+      <choice>The first term is <m>c_1 = 0</m>.</choice>
+      <choice credit="1">The first term is <m>c_3 = 1</m>.</choice>
+      <choice>The sequence has no first term because it starts at 3.</choice>
+    </answer>
+  </part>
+</problem>
