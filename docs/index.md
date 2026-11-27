@@ -11,3 +11,4 @@ Course notes, preview activities, and exercises.
 | :--- | :--- | :--- | :--- |
 | **01. Systems of Equations 1** | [Read Notes](01-systems-of-equations-1.pdf) | [Start Preview](https://doenet.org/code/219982) | [Start Exercises](https://doenet.org/code/749542) |
 | **02. Systems of Equations 2** | [Read Notes](02-systems-of-equations-2.pdf) | [Start Preview](https://doenet.org/code/760268) | [Start Exercises](https://doenet.org/code/697481) |
+| **03. Sequences** | [Read Notes](03-sequences.pdf) | [Start Preview](https://doenet.org/code/741334) | Not yet available |

@@ -46,3 +46,52 @@
     </answer>
   </part>
 </problem>
+
+<problem>
+  <p>Enter the first four terms of each sequence, starting with the term at the stated index.</p>
+
+  <part>
+    <p>For <m>(a_n)_{n=0}^\infty</m>, where <m>a_n = 2n + 3</m>, enter the first four terms.</p>
+    <p>
+      <m>a_0 = </m><mathInput name="a0term0"/>,
+      <m>a_1 = </m><mathInput name="a0term1"/>,
+      <m>a_2 = </m><mathInput name="a0term2"/>,
+      <m>a_3 = </m><mathInput name="a0term3"/>
+    </p>
+    <answer name="termsStartingAtZero">
+      <award>
+        <when>$a0term0 = 3 and $a0term1 = 5 and $a0term2 = 7 and $a0term3 = 9</when>
+      </award>
+    </answer>
+  </part>
+
+  <part>
+    <p>For <m>(a_n)_{n=1}^\infty</m>, where <m>a_n = n^2 + 1</m>, enter the first four terms.</p>
+    <p>
+      <m>a_1 = </m><mathInput name="b1term1"/>,
+      <m>a_2 = </m><mathInput name="b1term2"/>,
+      <m>a_3 = </m><mathInput name="b1term3"/>,
+      <m>a_4 = </m><mathInput name="b1term4"/>
+    </p>
+    <answer name="termsStartingAtOne">
+      <award>
+        <when>$b1term1 = 2 and $b1term2 = 5 and $b1term3 = 10 and $b1term4 = 17</when>
+      </award>
+    </answer>
+  </part>
+
+  <part>
+    <p>For <m>(a_n)_{n=3}^\infty</m>, where <m>a_n = 3n - 2</m>, enter the first four terms.</p>
+    <p>
+      <m>a_3 = </m><mathInput name="c3term3"/>,
+      <m>a_4 = </m><mathInput name="c3term4"/>,
+      <m>a_5 = </m><mathInput name="c3term5"/>,
+      <m>a_6 = </m><mathInput name="c3term6"/>
+    </p>
+    <answer name="termsStartingAtThree">
+      <award>
+        <when>$c3term3 = 7 and $c3term4 = 10 and $c3term5 = 13 and $c3term6 = 16</when>
+      </award>
+    </answer>
+  </part>
+</problem>
