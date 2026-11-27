@@ -73,7 +73,7 @@ Here are two examples:
 \end{itemize}
 \end{example}
 
-\begin{calloutbox}{Explicit Formulas for Arithmetic and Geometric Sequences} \linebreak
+\begin{calloutbox}{Explicit Formulas for Arithmetic and Geometric Sequences}\label{box:arithmetic-geometric-formulas}\linebreak
 A sequence \((a_n)\) is arithmetic if it can be written in the form
 \[(a+dn)_{n=0}^\infty = (a, a+d, a+2d, a+3d, \ldots),\]
 where \(a\) is the first term and \(d\) is the common difference. A sequence \((a_n)\) is geometric if it can be written in the form
@@ -91,9 +91,94 @@ Here are two examples:
 
 \section{The Limit of a Sequence}\label{sec:limit-sequence}
 
-% Introduce the concept of the limit of a sequence, including the formal definition.
-% Calloutbox: Definition of the Limit of a Sequence.
-% Example: Finding limits of sequences, including those that converge and diverge.
+Just as we were interested in the long-term behavior of functions, we are also interested in the long-term behavior of sequences. In particular, we want to know whether a sequence approaches a specific value as \(n\) becomes very large. This leads us to the concept of the limit of a sequence.
+
+\begin{definition}\label{def:convergent-sequence}
+    A sequence \((a_n)\) is said to \textbf{converge} to a limit \(L\) if, for every \(\epsilon > 0\), there exists a positive integer \(N\) such that for all \(n > N\), the terms of the sequence satisfy
+    \[|a_n - L| < \epsilon.\]
+    If such a limit \(L\) exists, we write
+    \[\lim_{n \to \infty} a_n = L.\]
+\end{definition}
+
+\begin{definition}\label{def:divergent-sequence}
+    If a sequence \((a_n)\) does not converge to any finite limit, we say that the sequence \textbf{diverges}. A sequence \textbf{diverges to infinity} if for every positive number \(M\), there exists a positive integer \(N\) such that for all \(n > N\), the terms of the sequence satisfy
+    \[a_n > M.\]
+    In this case, we write
+    \[\lim_{n \to \infty} a_n = \infty.\]
+    Similarly, a sequence \textbf{diverges to negative infinity} if for every negative number \(M\), there exists a positive integer \(N\) such that for all \(n > N\), the terms of the sequence satisfy
+    \[a_n < M.\]
+    In this case, we write
+    \[\lim_{n \to \infty} a_n = -\infty.\]
+\end{definition}
+
+\begin{example}\label{ex:limit-sequence-example}
+Here are three examples:
+\begin{itemize}
+    \item The sequence
+    \[\left(\frac{1}{n}\right)_{n=1}^\infty = \left(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots\right)\]
+    converges to 0, since for any \(\epsilon > 0\), we can choose \(N\) such that \(1/N < \epsilon\), and for all \(n > N\), we have \(|\frac{1}{n} - 0| = \frac{1}{n} < \epsilon\).
+    \item The sequence \((n)_{n=1}^\infty = (1, 2, 3, 4, \ldots)\) diverges to infinity, since for any positive number \(M\), we can choose \(N\) such that \(N > M\), and for all \(n > N\), we have \(n > M\).
+    \item The sequence \(((-1)^n)_{n=1}^\infty = (-1, 1, -1, 1, \ldots)\) diverges, since it does not approach any finite limit or infinity.
+\end{itemize}
+\end{example}
+
+\begin{example}\label{ex:limit-calculation}
+The sequence \((a_n)_{n=1}^\infty = \left(2+\frac{3}{n}\right)_{n=1}^\infty\) converges to 2. To show this using the definition of the limit, let \(\epsilon > 0\) be given. We need to find a positive integer \(N\) such that for all \(n > N\), we have \(|a_n - 2| < \epsilon\).
+Since \(|a_n - 2| = \left|\frac{3}{n}\right| = \frac{3}{n}\), we need \(\frac{3}{n} < \epsilon\), or equivalently \(n > \frac{3}{\epsilon}\). Choose an integer \(N > \frac{3}{\epsilon}\). Then, for all \(n > N\), we have \(|a_n - 2| = \frac{3}{n} < \epsilon\). The formal proof might look something like this:
+\begin{proof}
+Let \(\epsilon > 0\) be given. Choose \(N\) to be any integer greater than \(\frac{3}{\epsilon}\). Then, for all \(n > N\), we have
+\[|a_n - 2| = \left|2 + \frac{3}{n} - 2\right| = \left|\frac{3}{n}\right| = \frac{3}{n} < \frac{3}{N} < \epsilon.\]
+Thus, by the definition of the limit of a sequence, we conclude that
+\[\lim_{n \to \infty} a_n = 2\].
+\end{proof}
+\end{example}
+
+\begin{example}\label{ex:limit-calculation-2}
+The sequence \((a_n)_{n=1}^\infty = (3n-2)_{n=1}^\infty\) diverges to infinity. To show this using the definition, let \(M > 0\) be given. We need to find a positive integer \(N\) such that \(a_n > M\) whenever \(n > N\).
+Since \(a_n = 3n-2\), the inequality \(a_n > M\) is equivalent to \(n > \frac{M+2}{3}\). This suggests the following proof:
+\begin{proof}
+Let \(M > 0\) be given. Choose an integer \(N > \frac{M+2}{3}\). Then, for all \(n > N\), we have
+\[a_n = 3n-2 > 3N-2 = 3\left(\frac{M+2}{3}\right)-2 = M+2-2 = M.\]
+Thus, by the definition of divergence to infinity,
+\[\lim_{n \to \infty} a_n = \infty.\]
+\end{proof}
+\end{example}
+
+\begin{calloutbox}{Limits of Arithmetic and Geometric Sequences}\label{box:arithmetic-geometric-limits}
+    Every arithmetic sequence diverges to infinity or negative infinity, unless the common difference is zero, in which case the sequence converges to the constant value of its terms.
+    
+    \textbf{Example:} The arithmetic sequence \((5, 5, 5, 5, \ldots)\) has a common difference of 0 and converges to 5; the arithmetic sequence \((1, 3, 5, 7, \ldots)\) has a common difference of 2 and diverges to infinity; the arithmetic sequence \((10, 7, 4, 1, -2, \ldots)\) has a common difference of -3 and diverges to negative infinity.
+
+    Every geometric sequence converges to zero if the absolute value of the common ratio is less than one, diverges to infinity if the common ratio is greater than one, and diverges to negative infinity if the common ratio is less than negative one. If the common ratio is exactly one, the sequence converges to the constant value of its terms, and if the common ratio is exactly negative one, the sequence diverges.
+
+    \textbf{Example:} The geometric sequence \((1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \ldots)\) has a common ratio of \(\frac{1}{2}\) and converges to 0; the geometric sequence \((3, 6, 12, 24, \ldots)\) has a common ratio of 2 and diverges to infinity; the geometric sequence \((5, -5, 5, -5, \ldots)\) has a common ratio of -1 and diverges.
+\end{calloutbox}
+
+\section{Basic Properties of Limits}\label{sec:basic-limits}
+
+The limits of many sequences can be found using the fact that \(\lim_{n \to \infty} 1/n = 0\) along with some basic properties of limits. To ease notation, we will often write \(\lim(a_n)\) instead of \(\lim_{n \to \infty} a_n\). We may also write \((a_n)\to L\) or \((a_n)\to\pm\infty\) as short-hand for \(\lim(a_n) = L\) and \(\lim(a_n) = \pm\infty\), respectively.
+
+\begin{calloutbox}{Basic Limit Properties for Sequences}\label{box:basic-limit-laws}
+Let \((a_n)\) and \((b_n)\) be sequences that converge to limits \(A\) and \(B\), respectively. Then the following hold:
+\begin{enumerate}
+    \item \(\lim(a_n + b_n) = A + B\)
+    \item \(\lim(a_n - b_n) = A - B\)
+    \item \(\lim(a_n b_n) = AB\)
+    \item \(\lim\left(\frac{a_n}{b_n}\right) = \frac{A}{B}\), provided \(B \neq 0\)
+    \item \(\lim(c a_n) = cA\) for any constant \(c\)
+    \item \(\lim(a_n^k) = A^k\) for any positive integer \(k\)
+    \item \(\lim\left(\sqrt[k]{a_n}\right) = \sqrt[k]{A}\) for any positive integer \(k\), provided \(A \geq 0\)
+\end{enumerate}
+We also have the following properties for sequences that diverge to infinity or negative infinity:
+\begin{enumerate}[resume]
+    \item If \((a_n)\to\pm\infty\) and \((b_n)\to L\) for some finite limit \(L\), then \((a_n + b_n)\to\pm\infty\).
+    \item If \(\lim(a_n)=\lim(b_n)=\pm\infty\), then \((a_n + b_n)\to\pm\infty\).
+    \item If \((a_n)\to\infty\) and \((b_n)\to-\infty\), then the limit of \((a_n + b_n)\) is indeterminate.
+    \item If \((a_n)\to\pm\infty\) and \((b_n)\to L>0\), then \(\lim(a_n b_n) = \pm\infty\)
+    \item If \((a_n)\to\pm\infty\) and \((b_n)\to L<0\), then \(\lim(a_n b_n) = \mp\infty\)
+    \item If \((a_n)\to\pm\infty\) and \((b_n)\to 0\) then the limit of \((a_nb_n)\) is indeterminate.
+\end{enumerate} 
+\end{calloutbox}
 
 \section{Sigma Notation and Partial Sums}\label{sec:sigma-notation}
 
