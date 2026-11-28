@@ -1,0 +1,181 @@
+<problem>
+  <p>Find the requested terms of each sequence.</p>
+
+  <part>
+    <p>Let <m>a_n = 3n - 2</m> for <m>n \ge 1</m>. Find the first four terms.</p>
+    <p>
+      <m>a_1 = </m><mathInput name="arithmeticTerm1"/>,
+      <m>a_2 = </m><mathInput name="arithmeticTerm2"/>,
+      <m>a_3 = </m><mathInput name="arithmeticTerm3"/>,
+      <m>a_4 = </m><mathInput name="arithmeticTerm4"/>
+    </p>
+    <answer name="arithmeticTerms">
+      <award><when>$arithmeticTerm1 = 1 and $arithmeticTerm2 = 4 and $arithmeticTerm3 = 7 and $arithmeticTerm4 = 10</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p>Let <m>b_n = 2(-3)^n</m> for <m>n \ge 0</m>. Find the first four terms.</p>
+    <p>
+      <m>b_0 = </m><mathInput name="geometricTerm0"/>,
+      <m>b_1 = </m><mathInput name="geometricTerm1"/>,
+      <m>b_2 = </m><mathInput name="geometricTerm2"/>,
+      <m>b_3 = </m><mathInput name="geometricTerm3"/>
+    </p>
+    <answer name="geometricTerms">
+      <award><when>$geometricTerm0 = 2 and $geometricTerm1 = -6 and $geometricTerm2 = 18 and $geometricTerm3 = -54</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p>Let <m>c_n = n^2 - 1</m> for <m>n \ge 3</m>. Find the first three terms.</p>
+    <p>
+      <m>c_3 = </m><mathInput name="indexedTerm3"/>,
+      <m>c_4 = </m><mathInput name="indexedTerm4"/>,
+      <m>c_5 = </m><mathInput name="indexedTerm5"/>
+    </p>
+    <answer name="indexedTerms">
+      <award><when>$indexedTerm3 = 8 and $indexedTerm4 = 15 and $indexedTerm5 = 24</when></award>
+    </answer>
+  </part>
+</problem>
+
+<problem>
+  <p>For each sequence, find the requested values.</p>
+
+  <part>
+    <p>The arithmetic sequence <m>(7, 4, 1, -2, \ldots)</m> starts at index <m>n = 0</m>. Find the common difference <m>d</m> and the term <m>a_8</m>.</p>
+    <p><m>d = </m><mathInput name="commonDifference"/>, <m>a_8 = </m><mathInput name="arithmeticTerm8"/></p>
+    <answer name="arithmeticValues">
+      <award><when>$commonDifference = -3 and $arithmeticTerm8 = -17</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p>The geometric sequence <m>(3, 6, 12, 24, \ldots)</m> starts at index <m>n = 0</m>. Find the common ratio <m>r</m> and the term <m>a_5</m>.</p>
+    <p><m>r = </m><mathInput name="commonRatio"/>, <m>a_5 = </m><mathInput name="geometricTerm5"/></p>
+    <answer name="geometricValues">
+      <award><when>$commonRatio = 2 and $geometricTerm5 = 96</when></award>
+    </answer>
+  </part>
+
+  <part>
+    <p>Which formula describes the arithmetic sequence <m>(7, 4, 1, -2, \ldots)</m>, starting at <m>n = 0</m>?</p>
+    <answer name="arithmeticFormula">
+      <choice><m>a_n = 7 + 3n</m></choice>
+      <choice credit="1"><m>a_n = 7 - 3n</m></choice>
+      <choice><m>a_n = 7 - 3(n-1)</m></choice>
+      <choice><m>a_n = 7(-3)^n</m></choice>
+    </answer>
+  </part>
+
+  <part>
+    <p>Which formula describes the geometric sequence <m>(3, 6, 12, 24, \ldots)</m>, starting at <m>n = 0</m>?</p>
+    <answer name="geometricFormula">
+      <choice><m>a_n = 3 + 2n</m></choice>
+      <choice><m>a_n = 3(2)^{n-1}</m></choice>
+      <choice credit="1"><m>a_n = 3(2)^n</m></choice>
+      <choice><m>a_n = 2(3)^n</m></choice>
+    </answer>
+  </part>
+</problem>
+
+<problem>
+  <p>Classify the long-term behavior of each sequence.</p>
+
+  <part>
+    <p><m>a_n = 4 + \frac{2}{n}</m> for <m>n \ge 1</m>.</p>
+    <answer name="finiteBehavior">
+      <choice credit="1">Converges to 4.</choice>
+      <choice>Converges to 0.</choice>
+      <choice>Diverges to infinity.</choice>
+      <choice>Diverges by oscillating.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p><m>b_n = 5 - 2n</m> for <m>n \ge 1</m>.</p>
+    <answer name="negativeInfinityBehavior">
+      <choice>Converges to 5.</choice>
+      <choice>Diverges to infinity.</choice>
+      <choice credit="1">Diverges to negative infinity.</choice>
+      <choice>Diverges by oscillating.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p><m>c_n = 2(-2)^n</m> for <m>n \ge 0</m>.</p>
+    <answer name="alternatingBehavior">
+      <choice>Converges to 0.</choice>
+      <choice>Diverges to infinity.</choice>
+      <choice>Diverges to negative infinity.</choice>
+      <choice credit="1">Diverges by oscillating, with terms of increasing absolute value.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p><m>d_n = 6\left(\frac{1}{2}\right)^n</m> for <m>n \ge 0</m>.</p>
+    <answer name="geometricLimitBehavior">
+      <choice credit="1">Converges to 0.</choice>
+      <choice>Converges to 6.</choice>
+      <choice>Diverges to infinity.</choice>
+      <choice>Diverges by oscillating.</choice>
+    </answer>
+  </part>
+</problem>
+
+<problem>
+  <p>Use the basic properties of limits to find each limit.</p>
+
+  <part>
+    <p>Find <m>\lim_{n \to \infty}\left(5 - \frac{3}{n}\right)</m>.</p>
+    <p><m>\lim_{n \to \infty}\left(5 - \frac{3}{n}\right) = </m><mathInput name="limitValue1"/></p>
+    <answer name="finiteLimit1"><award><when>$limitValue1 = 5</when></award></answer>
+  </part>
+
+  <part>
+    <p>Find <m>\lim_{n \to \infty}\left(2 + \frac{1}{n}\right)\left(3 - \frac{4}{n}\right)</m>.</p>
+    <p>Limit: <mathInput name="limitValue2"/></p>
+    <answer name="finiteLimit2"><award><when>$limitValue2 = 6</when></award></answer>
+  </part>
+
+  <part>
+    <p>Find <m>\lim_{n \to \infty}\frac{4 + \frac{1}{n}}{2 - \frac{1}{n}}</m>.</p>
+    <p>Limit: <mathInput name="limitValue3"/></p>
+    <answer name="finiteLimit3"><award><when>$limitValue3 = 2</when></award></answer>
+  </part>
+</problem>
+
+<problem>
+  <p>Use the definitions of convergence and divergence to infinity.</p>
+
+  <part>
+    <p>For <m>a_n = 2 + \frac{3}{n}</m>, which positive integer <m>N</m> guarantees that <m>|a_n - 2| &lt; \frac{1}{10}</m> for every integer <m>n > N</m>?</p>
+    <answer name="epsilonThreshold">
+      <choice><m>N = 5</m></choice>
+      <choice><m>N = 10</m></choice>
+      <choice credit="1"><m>N = 30</m></choice>
+      <choice>No such positive integer exists.</choice>
+    </answer>
+  </part>
+
+  <part>
+    <p>For <m>b_n = 3n - 2</m>, which positive integer <m>N</m> guarantees that <m>b_n > 100</m> for every integer <m>n > N</m>?</p>
+    <answer name="infinityThreshold">
+      <choice><m>N = 10</m></choice>
+      <choice><m>N = 20</m></choice>
+      <choice credit="1"><m>N = 34</m></choice>
+      <choice>No such positive integer exists.</choice>
+    </answer>
+  </part>
+</problem>
+
+<problem>
+  <p>Suppose <m>a_n \to \infty</m> and <m>b_n \to -\infty</m>. What can be concluded about <m>a_n + b_n</m>?</p>
+  <answer name="indeterminateSum">
+    <choice>The sum must converge to 0.</choice>
+    <choice>The sum must diverge to infinity.</choice>
+    <choice>The sum must diverge to negative infinity.</choice>
+    <choice credit="1">The behavior cannot be determined from the given information alone.</choice>
+  </answer>
+</problem>

@@ -161,13 +161,13 @@ The limits of many sequences can be found using the fact that \(\lim_{n \to \inf
 \begin{calloutbox}{Basic Limit Properties for Sequences}\label{box:basic-limit-laws}
 Let \((a_n)\) and \((b_n)\) be sequences that converge to limits \(A\) and \(B\), respectively. Then the following hold:
 \begin{enumerate}
-    \item \(\lim(a_n + b_n) = A + B\)
-    \item \(\lim(a_n - b_n) = A - B\)
-    \item \(\lim(a_n b_n) = AB\)
-    \item \(\lim\left(\frac{a_n}{b_n}\right) = \frac{A}{B}\), provided \(B \neq 0\)
-    \item \(\lim(c a_n) = cA\) for any constant \(c\)
-    \item \(\lim(a_n^k) = A^k\) for any positive integer \(k\)
-    \item \(\lim\left(\sqrt[k]{a_n}\right) = \sqrt[k]{A}\) for any positive integer \(k\), provided \(A \geq 0\)
+    \item \textbf{Sum:} \(\lim(a_n + b_n) = A + B\)
+    \item \textbf{Difference:} \(\lim(a_n - b_n) = A - B\)
+    \item \textbf{Product:} \(\lim(a_n b_n) = AB\)
+    \item \textbf{Quotient:} \(\lim\left(\frac{a_n}{b_n}\right) = \frac{A}{B}\), provided \(B \neq 0\)
+    \item \textbf{Constant Multiple:} \(\lim(c a_n) = cA\) for any constant \(c\)
+    \item \textbf{Power:} \(\lim(a_n^k) = A^k\) for any positive integer \(k\)
+    \item \textbf{Root:} \(\lim\left(\sqrt[k]{a_n}\right) = \sqrt[k]{A}\) for any positive integer \(k\), provided \(A \geq 0\)
 \end{enumerate}
 We also have the following properties for sequences that diverge to infinity or negative infinity:
 \begin{enumerate}[resume]
@@ -179,6 +179,29 @@ We also have the following properties for sequences that diverge to infinity or 
     \item If \((a_n)\to\pm\infty\) and \((b_n)\to 0\) then the limit of \((a_nb_n)\) is indeterminate.
 \end{enumerate} 
 \end{calloutbox}
+
+\begin{example}\label{ex:limit-properties-rational}
+Find the limit of \(a_n = \frac{3n+2}{2n+1}\).
+
+Dividing the numerator and denominator by \(n\), we obtain
+\[a_n = \frac{3+\frac{2}{n}}{2+\frac{1}{n}}.\]
+Since \(\left(\frac{1}{n}\right) \to 0\), the numerator converges to \(3\) and the denominator converges to \(2\). By the quotient property,
+\[\lim(a_n) = \frac{3}{2}.\]
+\end{example}
+
+\begin{example}\label{ex:limit-properties-geometric}
+Find the limit of \(b_n = \left(2+\frac{1}{n}\right)\left(3+\left(-\frac{1}{2}\right)^n\right)\).
+
+The geometric sequence \(\left(\left(-\frac{1}{2}\right)^n\right)\) converges to \(0\), since its common ratio has absolute value less than \(1\). Also, \(\left(\frac{1}{n}\right) \to 0\), so the two factors converge to \(2\) and \(3\), respectively. By the product property,
+\[\lim(b_n) = 2 \cdot 3 = 6.\]
+\end{example}
+
+\begin{example}\label{ex:limit-properties-infinity}
+Determine the behavior of \(c_n = 3n + \left(\frac{1}{2}\right)^n\).
+
+The arithmetic sequence \((3n)\) diverges to infinity, while the geometric sequence \(\left(\left(\frac{1}{2}\right)^n\right)\) converges to \(0\). Therefore, by property 8 of the basic limit properties, the sum diverges to infinity:
+\[\lim(c_n) = \infty.\]
+\end{example}
 
 \section{Sigma Notation and Partial Sums}\label{sec:sigma-notation}
 
