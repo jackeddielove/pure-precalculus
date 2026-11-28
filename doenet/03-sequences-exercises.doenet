@@ -89,7 +89,7 @@
       <choice credit="1">Converges to 4.</choice>
       <choice>Converges to 0.</choice>
       <choice>Diverges to infinity.</choice>
-      <choice>Diverges by oscillating.</choice>
+      <choice>Diverges without tending to <m>\pm\infty</m>.</choice>
     </answer>
   </part>
 
@@ -99,7 +99,7 @@
       <choice>Converges to 5.</choice>
       <choice>Diverges to infinity.</choice>
       <choice credit="1">Diverges to negative infinity.</choice>
-      <choice>Diverges by oscillating.</choice>
+      <choice>Diverges without tending to <m>\pm\infty</m>.</choice>
     </answer>
   </part>
 
@@ -109,7 +109,7 @@
       <choice>Converges to 0.</choice>
       <choice>Diverges to infinity.</choice>
       <choice>Diverges to negative infinity.</choice>
-      <choice credit="1">Diverges by oscillating, with terms of increasing absolute value.</choice>
+      <choice credit="1">Diverges without tending to <m>\pm\infty</m>.</choice>
     </answer>
   </part>
 
@@ -119,7 +119,7 @@
       <choice credit="1">Converges to 0.</choice>
       <choice>Converges to 6.</choice>
       <choice>Diverges to infinity.</choice>
-      <choice>Diverges by oscillating.</choice>
+      <choice>Diverges without tending to <m>\pm\infty</m>.</choice>
     </answer>
   </part>
 </problem>
